@@ -1,0 +1,54 @@
+<html></html>
+<head>
+    <title>Suhita</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div>
+                    <header className="bg-black text-white flex justify-between items-center p-4">
+                        <div className="flex items-center">
+                            <img src="https://placehold.co/100x50" alt="Suhita logo" className="h-12"/>
+                        </div>
+                        <nav className="flex space-x-8">
+                            <a href="#" className="hover:text-yellow-500">BERANDA</a>
+                            <a href="#" className="hover:text-yellow-500">TENTANG KAMI</a>
+                            <a href="#" className="text-yellow-500">PRODUK</a>
+                            <a href="#" className="hover:text-yellow-500">KONTAK</a>
+                        </nav>
+                        <div>
+                            <input type="text" placeholder="Search ..." className="p-2 rounded-full"/>
+                        </div>
+                    </header>
+                    <main className="p-8 flex">
+                        <div className="relative">
+                            <div className="absolute top-0 left-0 w-48 h-48 bg-yellow-500 -z-10"></div>
+                            <img src="https://placehold.co/300x300" alt="Person holding a large honeycomb in a forest" className="relative z-10"/>
+                        </div>
+                        <div className="ml-8">
+                            <p className="text-lg">
+                                Madu suhita berusaha dan tetap konsisten membangun dan mempertahankan kemurnian madu yang berasal dari nektar alami, Menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu yang kalian nikmati berasal dari sumber yang bertanggungjawab terhadap lingkungan.
+                            </p>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

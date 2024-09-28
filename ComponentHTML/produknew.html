@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>Suhita</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const products = [
+            { id: 1, name: "Apollonia Madu Hutan Damara - 300gr", price: "Rp500.000", image: "https://placehold.co/300x300", alt: "Apollonia Madu Hutan Damara - 300gr" },
+            { id: 2, name: "Melifera Honey - 1Kg", price: "Rp215.000", image: "https://placehold.co/300x300", alt: "Melifera Honey - 1Kg" },
+            { id: 3, name: "Thonacca Propolis Honey - 300gr", price: "Rp350.000", image: "https://placehold.co/300x300", alt: "Thonacca Propolis Honey - 300gr" },
+            { id: 4, name: "Rain Forest Honey - 650gr", price: "Rp185.000", image: "https://placehold.co/300x300", alt: "Rain Forest Honey - 650gr" },
+            { id: 5, name: "Melifera Honey - 385gr", price: "Rp115.000", image: "https://placehold.co/300x300", alt: "Melifera Honey - 385gr" },
+            { id: 6, name: "Melifera Honey - 50gr", price: "Rp25.000", image: "https://placehold.co/300x300", alt: "Melifera Honey - 50gr" },
+            { id: 7, name: "Rain Forest Honey - 50gr", price: "Rp30.000", image: "https://placehold.co/300x300", alt: "Rain Forest Honey - 50gr" },
+            { id: 8, name: "Stingless Bee Honey - 100gr", price: "Rp150.000", image: "https://placehold.co/300x300", alt: "Stingless Bee Honey - 100gr" },
+            { id: 9, name: "Stingless Bee Honey - 500gr", price: "Rp275.000", image: "https://placehold.co/300x300", alt: "Stingless Bee Honey - 500gr" }
+        ];
+        const reviews = [
+        {
+            image: "https://placehold.co/100x150",
+            quality: "bagus, packaging cantik, elegan",
+            taste: "enak bangettt",
+            review: "Ga usah diraguin lagi kualitas madunya Suhita, real madu murni asli, yg sachet gini lebih travel friendly, dan anak2ku suka banget rasa madunyaa",
+            rating: 5
+        },
+        {
+            image: "https://placehold.co/100x150",
+            quality: "bagus, packaging cantik, elegan",
+            taste: "enak bangettt",
+            review: "Ga usah diraguin lagi kualitas madunya Suhita, real madu murni asli, yg sachet gini lebih travel friendly, dan anak2ku suka banget rasa madunyaa",
+            rating: 5
+        },
+        {
+            image: "https://placehold.co/100x150",
+            quality: "kualitas terbaik, sangat elegan",
+            taste: "manis, lezat",
+            review: "Madu ini sangat memuaskan, packagingnya rapi, dan rasanya sangat lezat. Cocok untuk sarapan pagi dan tambahan teh.",
+            rating: 4
+        },
+        {
+            image: "https://placehold.co/100x150",
+            quality: "packaging bagus, rapi",
+            taste: "rasanya sangat alami",
+            review: "Saya sangat suka produk ini! Rasanya alami dan packagingnya juga sangat rapi. Sangat cocok untuk keluarga saya.",
+            rating: 4
+        },
+        {
+            image: "https://placehold.co/100x150",
+            quality: "elegan dan berkualitas tinggi",
+            taste: "super enak",
+            review: "Madu berkualitas tinggi dengan rasa yang luar biasa. Saya akan beli lagi. Cocok juga sebagai hadiah untuk teman.",
+            rating: 5
+        }
+        ];  
+
+        const ReviewCard = ({ image, quality, taste, review, rating }) => (
+            <div className="flex border rounded-lg p-4 mb-4">
+                <img src={image} alt="Product image" className="w-24 h-24 object-cover mr-4" />
+                <div>
+                    <p><strong>Kualitas:</strong> {quality}</p>
+                    <p><strong>Rasa:</strong> {taste}</p>
+                    <p className="mt-2">"{review}"</p>
+                    <div className="text-red-500 mt-2">
+                        {Array(rating).fill().map((_, i) => (
+                            <i key={i} className="fas fa-star"></i>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+
+        const App = () => (
+            <div>
+                <header className="bg-black text-white flex justify-between items-center p-4">
+                    <div className="flex items-center">
+                        <img src="https://placehold.co/100x50" alt="Suhita logo" className="h-12" />
+                    </div>
+                    <nav className="flex space-x-8">
+                        <a href="#" className="hover:text-yellow-500">BERANDA</a>
+                        <a href="#" className="hover:text-yellow-500">TENTANG KAMI</a>
+                        <a href="#" className="text-yellow-500">PRODUK</a>
+                        <a href="#" className="hover:text-yellow-500">KONTAK</a>
+                    </nav>
+                    <div>
+                        <input type="text" placeholder="Search ..." className="p-2 rounded-full" />
+                    </div>
+                </header>
+
+                <main className="p-8">
+                    <section className="mb-8">
+                        <div className="relative">
+                            <div className="absolute top-0 left-0 w-48 h-48 bg-yellow-500 -z-10"></div>
+                            <img src="https://placehold.co/300x300" alt="Person holding honeycomb" className="relative z-10" />
+                        </div>
+                        <div className="ml-8">
+                            <p className="text-lg">
+                                Madu suhita berusaha dan tetap konsisten membangun dan mempertahankan kemurnian madu yang berasal dari nektar alami, Menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu yang kalian nikmati berasal dari sumber yang bertanggung jawab terhadap lingkungan.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="text-xl font-bold mb-4">Produk Kami</h2>
+                        <div className="grid grid-cols-3 gap-4">
+                            {products.map((product) => (
+                                <div key={product.id} className="border-4 border-yellow-500 p-4">
+                                    <img src={product.image} alt={product.alt} className="w-full h-48 object-cover mb-4" />
+                                    <div className="text-center">
+                                        <p className="text-sm mb-2">{product.name}</p>
+                                        <p className="text-lg font-bold mb-2">{product.price}</p>
+                                        <button className="bg-white text-black border border-black px-4 py-2">Buy Now</button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="mt-8">
+                        <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
+                        <div>
+                            {reviews.map((review, index) => (
+                                <ReviewCard key={index} {...review} />
+                            ))}
+                        </div>
+                    </section>
+                </main>
+
+                <footer className="bg-black text-white p-4 mt-8">
+                    <div className="flex justify-between items-center">
+                        <div>
+                            <img src="https://placehold.co/100x50" alt="Suhita Logo" />
+                        </div>
+                        <div className="flex space-x-4">
+                            <a href="#" className="text-white"><i className="fab fa-whatsapp"></i></a>
+                            <a href="#" className="text-white"><i className="fab fa-instagram"></i></a>
+                            <a href="#" className="text-white"><i className="fab fa-facebook"></i></a>
+                        </div>
+                        <div className="text-right">
+                            <p>Beranda</p>
+                            <p>Tentang Kami</p>
+                            <p>Produk</p>
+                            <p>Kontak</p>
+                        </div>
+                        <div>
+                            <img src="https://placehold.co/100x100" alt="Certification QR Code" />
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        );
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

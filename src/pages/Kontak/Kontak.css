@@ -1,0 +1,27 @@
+.kontak {
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .kontak h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .kontak p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-info i {
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,93 @@
+/* Main Content */
+.main-content {
+    padding: 32px;
+}
+.about-section {
+    display: flex;
+    margin-bottom: 32px;
+}
+.about-image {
+    width: 50%;
+}
+.about-text {
+    width: 50%;
+    padding-left: 16px;
+    font-size: 18px;
+}
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+.bee-types .bee-type {
+    display: flex;
+    margin-bottom: 32px;
+}
+.bee-type.reverse {
+    flex-direction: row-reverse;
+}
+.bee-image {
+    width: 25%;
+}
+.bee-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.bee-description {
+    font-size: 18px;
+}
+
+/* Video Section */
+.video-section {
+    padding: 32px;
+}
+.video-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.video-thumbnail {
+    width: 100%;
+    max-width: 800px;
+}
+.video-info {
+    display: flex;
+    margin-bottom: 16px;
+}
+.video-info.reverse {
+    flex-direction: row-reverse;
+}
+.video-image {
+    width: 50%;
+}
+.video-text {
+    width: 50%;
+    padding-left: 16px;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 32px;
+    text-align: center;
+}
+.gallery-button {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+}
+.gallery-image {
+    width: 100%;
+    height: auto;
+}

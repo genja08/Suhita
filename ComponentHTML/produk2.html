@@ -1,0 +1,82 @@
+<html></html>
+<head>
+    <title>Product Page</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div id="root"></div>
+    <script type="text/babel">
+        const products = [
+            { name: "Rain Forest Honey - 50gr", price: "Rp25.000", image: "https://placehold.co/300x300", alt: "Rain Forest Honey - 50gr" },
+            { name: "Stingless Bee Honey - 50gr", price: "Rp30.000", image: "https://placehold.co/300x300", alt: "Stingless Bee Honey - 50gr" },
+            { name: "Melifera Honey - 250gr", price: "Rp80.000", image: "https://placehold.co/300x300", alt: "Melifera Honey - 250gr" },
+            { name: "Melifera Honey - 300gr", price: "Rp185.000", image: "https://placehold.co/300x300", alt: "Melifera Honey - 300gr" },
+            { name: "Premium Natural Honey Stick - 75gr", price: "Rp20.000", image: "https://placehold.co/300x300", alt: "Premium Natural Honey Stick - 75gr" },
+            { name: "Rain Forest Honey - 300gr", price: "Rp110.000", image: "https://placehold.co/300x300", alt: "Rain Forest Honey - 300gr" },
+            { name: "Stingless Bee Honey - 350gr", price: "Rp180.000", image: "https://placehold.co/300x300", alt: "Stingless Bee Honey - 350gr" },
+            { name: "Melifera Honey - 385gr", price: "Rp100.000", image: "https://placehold.co/300x300", alt: "Melifera Honey - 385gr" },
+            { name: "Stingless Bee Honey - 850gr", price: "Rp200.000", image: "https://placehold.co/300x300", alt: "Stingless Bee Honey - 850gr" }
+        ];
+
+        function App() {
+            return (
+                <div className="container mx-auto px-4">
+                    <nav className="mt-4">
+                        <span className="text-black">BERANDA</span> / <span className="text-yellow-500">PRODUK</span>
+                    </nav>
+                    <div className="grid grid-cols-3 gap-4 mt-8">
+                        {products.map((product, index) => (
+                            <div key={index} className="border-4 border-yellow-500 p-4">
+                                <img src={product.image} alt={product.alt} className="w-full h-auto" />
+                                <div className="mt-2 text-center">
+                                    <p>{product.name}</p>
+                                    <p className="text-yellow-500">{product.price}</p>
+                                    <button className="mt-2 bg-white text-black border border-black px-4 py-2">Buy Now</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex justify-center mt-8">
+                        <button className="text-2xl">&gt;</button>
+                    </div>
+                    <div className="flex justify-center mt-4">
+                        <button className="bg-gray-800 text-white px-4 py-2">Customer Reviews</button>
+                    </div>
+                    <footer className="bg-black text-white mt-8 p-4">
+                        <div className="flex justify-between items-center">
+                            <div>
+                                <img src="https://placehold.co/100x50" alt="Suhita Logo" />
+                            </div>
+                            <div className="flex space-x-4">
+                                <a href="#" className="text-white"><i className="fab fa-whatsapp"></i></a>
+                                <a href="#" className="text-white"><i className="fab fa-instagram"></i></a>
+                                <a href="#" className="text-white"><i className="fab fa-facebook"></i></a>
+                            </div>
+                            <div className="text-right">
+                                <p>Beranda</p>
+                                <p>Tentang Kami</p>
+                                <p>Produk</p>
+                                <p>Kontak</p>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/100x100" alt="Certification QR Code" />
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
