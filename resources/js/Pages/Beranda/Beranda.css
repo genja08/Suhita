@@ -1,0 +1,30 @@
+.beranda {
+    flex: 1;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .quote {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    max-width: 800px;
+  }
+  
+  .quote p {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .quote button {
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+  }
