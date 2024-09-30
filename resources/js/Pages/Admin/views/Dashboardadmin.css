@@ -1,0 +1,21 @@
+body {
+    background-color: #121212; /* Dark background for the page */
+    color: #ffffff; /* Text color to white for contrast */
+  }
+  
+  .sidebar {
+    background-color: #1f1f1f; /* Dark gray for sidebar */
+  }
+  
+  .card {
+    background-color: #2e2e2e; /* Dark color for the card backgrounds */
+    color: #ffffff; /* White text color */
+  }
+  
+  .navbar {
+    background-color: #1f1f1f; /* Dark color for the navigation bar */
+  }
+  
+  a, .nav-link {
+    color: #ffffff; /* Links and nav links to white */
+  }
