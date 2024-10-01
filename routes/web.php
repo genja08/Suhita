@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -17,8 +18,21 @@ use Inertia\Inertia;
 // });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Admin/views/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/admin/produk', function () {
+    return Inertia::render('Admin/views/Produk/index');
+})->middleware(['auth', 'verified'])->name('produk');
+
+Route::get('/admin/tambahproduk', function () {
+    return Inertia::render('Admin/views/Produk/create');
+})->middleware(['auth', 'verified'])->name('createproduk');
+
+
+Route::post('/admin/storeproduk', [ProdukController::class, 'store'])
+    ->middleware(['auth', 'verified']);
 
 // Route::get('/beranda', function () {
 //     return Inertia::render('Beranda');
@@ -37,9 +51,9 @@ Route::get('/kontak', function () {
     return Inertia::render('Kontak');
 });
 
-Route::get('/dashboardadmin', function () {
-    return Inertia::render('Admin/views/Dashboard');
-});
+// Route::get('/dashboardadmin', function () {
+//     return Inertia::render('Admin/views/Dashboard');
+// });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -10,8 +10,8 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 import { Container, Row, Col  } from 'react-bootstrap';
+// import '../../../Components/Bootstrap/css/bootstrap.min.css';
 import './dashboardadmin.css';
-import '../../../Components/Bootstrap/css/bootstrap.min.css';
 
 import {
   Button,
