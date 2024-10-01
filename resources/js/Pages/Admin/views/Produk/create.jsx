@@ -41,7 +41,7 @@ import {
 
 function Dashboard(props) {
     const [formData, setFormData] = useState({
-      name: "",
+      nama_produk: "",
       deskripsi: "",
       harga: "",
       ketersediaan: "",
@@ -65,9 +65,9 @@ function Dashboard(props) {
         data.append(key, formData[key]);
       }
       if (file) {
-        data.append("gambar", file);
+        data.append("gambar_produk", file); // Ensure name matches 'gambar_produk'
       }
-  
+    
       try {
         const response = await axios.post("/admin/storeproduk", data, {
           headers: {
@@ -75,12 +75,15 @@ function Dashboard(props) {
           },
         });
         console.log(response.data);
-        alert('BERHASIL AJG');
+        alert(response.data.message); // This will display the success message from the server
         window.location.href = '/admin/produk';
-        // Handle success (e.g., show a success message, redirect, etc.)
       } catch (error) {
         console.error("Error submitting form:", error);
-        // Handle error (e.g., show error message)
+        if (error.response && error.response.data.message) {
+          alert(error.response.data.message); // This will display the error message from the server
+        } else {
+          alert("An unexpected error occurred.");
+        }
       }
     };
   
@@ -108,8 +111,8 @@ function Dashboard(props) {
                             <h2 className="text-white mt-4">Tambah Produk</h2>
                             <form onSubmit={handleSubmit}>
                               <div className="form-group">
-                                <label htmlFor="name" className="text-white">Nama Produk</label>
-                                <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Nama produk" required />
+                                <label htmlFor="nama_produk" className="text-white">Nama Produk</label>
+                                <input type="text" className="form-control" id="nama_produk" name="nama_produk" value={formData.nama_produk} onChange={handleInputChange} placeholder="Nama produk" required />
                               </div>
                               <div className="form-group mt-3">
                                 <label htmlFor="deskripsi" className="text-white">Deskripsi</label>
@@ -120,15 +123,15 @@ function Dashboard(props) {
                                 <input type="number" className="form-control" id="harga" name="harga" value={formData.harga} onChange={handleInputChange} placeholder="Harga produk" required />
                               </div>
                               <div className="form-group">
-                                <label htmlFor="gambar" className="text-white">Foto Produk</label>
-                                <input type="file" className="form-control" id="gambar" name="gambar" onChange={handleFileChange} accept=".png" placeholder="Foto produk format .PNG" required />
+                                <label htmlFor="gambar_produk" className="text-white">Foto Produk</label>
+                                <input type="file" className="form-control" id="gambar_produk" name="gambar_produk" onChange={handleFileChange} accept=".png" placeholder="Foto produk format .PNG" required />
                               </div>
                               <div className="form-group mt-3">
                                 <label htmlFor="ketersediaan" className="text-white">Ketersediaan</label>
                                 <select className="form-control" id="ketersediaan" name="ketersediaan" value={formData.ketersediaan} onChange={handleInputChange} required>
                                   <option value="">Pilih</option>
-                                  <option value="tersedia">Tersedia</option>
-                                  <option value="belum_tersedia">Belum Tersedia</option>
+                                  <option value="1">Tersedia</option>
+                                  <option value="0">Belum Tersedia</option>
                                 </select>
                               </div>
                               <button type="submit" className="btn btn-primary mt-3">Submit</button>

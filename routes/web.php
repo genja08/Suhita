@@ -22,17 +22,27 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/admin/produk', function () {
-    return Inertia::render('Admin/views/Produk/index');
-})->middleware(['auth', 'verified'])->name('produk');
+// Route::get('/admin/produk', function () {
+//     return Inertia::render('Admin/views/Produk/index');
+// })->middleware(['auth', 'verified'])->name('produk');
 
-Route::get('/admin/tambahproduk', function () {
-    return Inertia::render('Admin/views/Produk/create');
-})->middleware(['auth', 'verified'])->name('createproduk');
+Route::get('/admin/produk', [ProdukController::class, 'index'])
+->middleware(['auth', 'verified'])->name('produk');
+
+Route::get('/admin/tambahproduk', [ProdukController::class, 'create'])
+->middleware(['auth', 'verified'])->name('createproduk');
+
+// Route::get('/admin/tambahproduk', function () {
+//     return Inertia::render('Admin/views/Produk/create');
+// })->middleware(['auth', 'verified'])->name('createproduk');
 
 
 Route::post('/admin/storeproduk', [ProdukController::class, 'store'])
-    ->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified'])->name('products.store');
+
+Route::post('/admin/updateproduk/{id}', [ProdukController::class, 'update'])->name('products.update');
+Route::delete('/admin/deleteproduk/{id}', [ProdukController::class, 'destroy'])->name('products.destroy');
+
 
 // Route::get('/beranda', function () {
 //     return Inertia::render('Beranda');

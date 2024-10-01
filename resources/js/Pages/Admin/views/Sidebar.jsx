@@ -10,7 +10,7 @@ function Sidebar() {
       <Nav className="flex-column p-3">
         <h4 className="text-white">Admin</h4>
         <Nav.Item>
-          <Nav.Link href="/dashboardadmin" className="text-white menu-item">
+          <Nav.Link href="/dashboard" className="text-white menu-item">
             Dashboard <MdDashboard className="menu-item-icon" />
           </Nav.Link>
         </Nav.Item>
