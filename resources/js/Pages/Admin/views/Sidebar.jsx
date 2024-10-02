@@ -2,7 +2,7 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { MdDashboard, MdPeople, MdDescription, MdSettings, MdOutlineStorefront } from 'react-icons/md';
+import { MdDashboard, MdPeople, MdDescription, MdSettings, MdOutlineStorefront, MdInsertPhoto, MdOutlineReviews, MdOutlineNewspaper   } from 'react-icons/md';
 
 function Sidebar() {
   return (
@@ -24,19 +24,19 @@ function Sidebar() {
 
         <Nav.Item>
           <Nav.Link href="/admin/tentang" className="text-white menu-item">
-            Tentang <MdOutlineStorefront className="menu-item-icon" />
+            Tentang Kami <MdOutlineNewspaper  className="menu-item-icon" />
           </Nav.Link>
         </Nav.Item>
 
         <Nav.Item>
           <Nav.Link href="/admin/review" className="text-white menu-item">
-            Reviews <MdOutlineStorefront className="menu-item-icon" />
+            Reviews <MdOutlineReviews  className="menu-item-icon" />
           </Nav.Link>
         </Nav.Item>
 
         <Nav.Item>
           <Nav.Link href="/admin/gallery" className="text-white menu-item">
-            Gallery <MdOutlineStorefront className="menu-item-icon" />
+            Gallery <MdInsertPhoto  className="menu-item-icon" />
           </Nav.Link>
         </Nav.Item>
 

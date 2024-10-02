@@ -202,6 +202,7 @@ function IndexReview({ reviews, products }) {
 
                               <div className="form-group">
                                 <label htmlFor="rating">Rating</label>
+                                <br />
                                 <input
                                   type="range"
                                   className="form-range"
@@ -214,7 +215,7 @@ function IndexReview({ reviews, products }) {
                                   onChange={handleInputChange}
                                   required
                                 />
-                                <span className="text-white ml-2">Bintang: {editFormData.rating}</span> {/* Fix the reference here */}
+                                <span className="text-white ml-2">Bintang: {editFormData.rating}</span>
                               </div>
                               
                               <button type="submit" className="btn btn-info">Update</button>

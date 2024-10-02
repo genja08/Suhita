@@ -13,6 +13,7 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
+  Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 
 function IndexAbout({ abouts }) {
@@ -116,7 +117,7 @@ function IndexAbout({ abouts }) {
                           </table>
                         </div>
 
-                        {/* Edit Modal */}
+                        {/* Edit Modal
                         {isModalOpen && (
                           <div className="modal d-block" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
                             <div className="modal-content">
@@ -150,7 +151,46 @@ function IndexAbout({ abouts }) {
                               </form>
                             </div>
                           </div>
-                        )}
+                        )} */}
+
+                        {/* Edit Modal */}
+                        <Modal isOpen={isModalOpen} toggle={closeModal}>
+                          <ModalHeader toggle={closeModal}>
+                              <CardTitle tag="h2">Edit Review</CardTitle>
+                          </ModalHeader>
+                          <ModalBody>
+                              <form onSubmit={handleEditSubmit}>
+                                <div className="form-group">
+                                  <label htmlFor="judul">Judul</label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="judul"
+                                    name="judul"
+                                    value={editFormData.judul}
+                                    onChange={(e) => setEditFormData({ ...editFormData, judul: e.target.value })}
+                                    required
+                                  />
+                                </div>
+                                <div className="form-group">
+                                  <label htmlFor="deskripsi">Deskripsi</label>
+                                  <textarea
+                                    className="form-control"
+                                    id="deskripsi"
+                                    name="deskripsi"
+                                    value={editFormData.deskripsi}
+                                    onChange={(e) => setEditFormData({ ...editFormData, deskripsi: e.target.value })}
+                                    required
+                                  />
+                                </div>
+                                
+                                <button type="submit" className="btn btn-success">Update</button>
+                              </form>
+                          </ModalBody>
+                          <ModalFooter>
+                            <Button color="secondary" onClick={closeModal}>Close</Button>
+                          </ModalFooter>
+                        </Modal>
                       </Col>
                     </Row>
                   </CardBody>

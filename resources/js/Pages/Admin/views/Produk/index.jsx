@@ -13,6 +13,8 @@ import {
   CardHeader,
   CardBody,
   CardTitle,
+  Modal, ModalHeader, ModalBody, ModalFooter
+
 } from "reactstrap";
 
 function IndexProduk({ products }) {
@@ -98,6 +100,7 @@ function IndexProduk({ products }) {
                                 <th scope="col">Nama Produk</th>
                                 <th scope="col">Harga</th>
                                 <th scope="col">Gambar Produk</th>
+                                <th scope="col">Deskripsi</th>
                                 <th scope="col">Ketersediaan</th>
                                 <th scope="col">Actions</th>
                               </tr>
@@ -111,6 +114,7 @@ function IndexProduk({ products }) {
                                   <td>
                                     <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
                                   </td>
+                                  <td>{product.deskripsi}</td>
                                   <td>
                                     {product.ketersediaan === 1 ? (
                                       <span className="badge badge-success text-dark">Tersedia</span>
@@ -129,10 +133,11 @@ function IndexProduk({ products }) {
                         </div>
 
                         {/* Edit Modal */}
-                        {isModalOpen && (
-                          <div className="modal d-block" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.8)' }}>
-                            <div className="modal-content">
-                              <span className="close" onClick={closeModal}>&times;</span>
+                        <Modal isOpen={isModalOpen} toggle={closeModal}>
+                          <ModalHeader toggle={closeModal}>
+                              <CardTitle tag="h2">Edit Review</CardTitle>
+                          </ModalHeader>
+                          <ModalBody>
                               <form onSubmit={handleEditSubmit}>
                                 <div className="form-group">
                                   <label htmlFor="nama_produk">Nama Produk</label>
@@ -158,6 +163,20 @@ function IndexProduk({ products }) {
                                     required
                                   />
                                 </div>
+
+                                <div className="form-group">
+                                  <label htmlFor="deskripsi">Deskripsi</label>
+                                  <textarea
+                                    className="form-control"
+                                    id="deskripsi"
+                                    name="deskripsi"
+                                    value={editFormData.deskripsi}
+                                    onChange={(e) => setEditFormData({ ...editFormData, deskripsi: e.target.value })}
+                                    required
+                                  />
+                                </div>
+
+
                                 <div className="form-group">
                                   <label htmlFor="ketersediaan">Ketersediaan</label>
                                   <select
@@ -174,9 +193,11 @@ function IndexProduk({ products }) {
                                 </div>
                                 <button type="submit" className="btn btn-success">Update</button>
                               </form>
-                            </div>
-                          </div>
-                        )}
+                          </ModalBody>
+                          <ModalFooter>
+                            <Button color="secondary" onClick={closeModal}>Close</Button>
+                          </ModalFooter>
+                        </Modal>
                       </Col>
                     </Row>
                   </CardBody>
