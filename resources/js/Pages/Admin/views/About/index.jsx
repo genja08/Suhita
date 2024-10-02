@@ -15,22 +15,20 @@ import {
   CardTitle,
 } from "reactstrap";
 
-function IndexProduk({ products }) {
+function IndexAbout({ abouts }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [editFormData, setEditFormData] = useState({
-    nama_produk: '',
-    deskripsi: '',
-    harga: '',
-    ketersediaan: '',
+    judul: '',
+    deskripsi: ''
   });
   const [isModalOpen, setIsModalOpen] = useState(false); // New state for modal visibility
 
   // Handle delete product
   const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this product?')) {
+    if (window.confirm('Are you sure you want to delete this data?')) {
       try {
-        await axios.delete(`/admin/deleteproduk/${id}`);
-        alert('Product deleted successfully');
+        await axios.delete(`/admin/deleteabout/${id}`);
+        alert('Data deleted successfully');
         window.location.reload(); // Refresh after deletion
       } catch (error) {
         console.error('Error deleting product:', error);
@@ -40,13 +38,11 @@ function IndexProduk({ products }) {
   };
 
   // Open edit modal
-  const openEditModal = (product) => {
-    setSelectedProduct(product);
+  const openEditModal = (about) => {
+    setSelectedProduct(about);
     setEditFormData({
-      nama_produk: product.nama_produk,
-      deskripsi: product.deskripsi,
-      harga: product.harga,
-      ketersediaan: product.ketersediaan,
+      judul: about.judul,
+      deskripsi: about.deskripsi
     });
     setIsModalOpen(true); // Open modal
   };
@@ -60,12 +56,12 @@ function IndexProduk({ products }) {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`/admin/updateproduk/${selectedProduct.id}`, editFormData);
+      const response = await axios.post(`/admin/updateabout/${selectedProduct.id}`, editFormData);
       alert(response.data.message);
       window.location.reload(); // Refresh after edit
     } catch (error) {
-      console.error('Error updating product:', error);
-      alert('Failed to update product');
+      console.error('Error updating data:', error);
+      alert('Failed to update data');
     }
   };
 
@@ -82,7 +78,7 @@ function IndexProduk({ products }) {
                   <CardHeader>
                     <Row>
                       <Col className="text-left" sm="6">
-                        <CardTitle tag="h2">Produk</CardTitle>
+                        <CardTitle tag="h2">Tentang</CardTitle>
                       </Col>
                     </Row>
                   </CardHeader>
@@ -90,37 +86,29 @@ function IndexProduk({ products }) {
                     <Row>
                       <Col lg="12">
                         <div className="container">
-                          <a href="/admin/tambahproduk" className="btn btn-sm btn-info">Tambah Produk</a>
+                          <a href="/admin/tambahabout" className="btn btn-sm btn-info">Tambah Data</a>
                           <table className="table table-dark table-hover w-100">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nama Produk</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Gambar Produk</th>
-                                <th scope="col">Ketersediaan</th>
+                                <th scope="col">Judul</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Gambar</th>
                                 <th scope="col">Actions</th>
                               </tr>
                             </thead>
                             <tbody>
-                              {products.map((product, index) => (
-                                <tr key={product.id}>
+                              {abouts.map((about, index) => (
+                                <tr key={about.id}>
                                   <th scope="row" className="text-white">{index + 1}</th>
-                                  <td>{product.nama_produk}</td>
-                                  <td>{product.harga}</td>
+                                  <td>{about.judul}</td>
+                                  <td>{about.deskripsi}</td>
                                   <td>
-                                    <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
+                                    <img src={`http://127.0.0.1:8000${about.gambar}`} alt={about.gambar} width="100" height="100" />
                                   </td>
                                   <td>
-                                    {product.ketersediaan === 1 ? (
-                                      <span className="badge badge-success text-dark">Tersedia</span>
-                                    ) : (
-                                      <span className="badge badge-danger text-dark">Habis</span>
-                                    )}
-                                  </td>
-                                  <td>
-                                    <button className="btn btn-sm btn-primary" onClick={() => openEditModal(product)}>Edit</button>
-                                    <button className="btn btn-sm btn-danger" onClick={() => handleDelete(product.id)}>Delete</button>
+                                    <button className="btn btn-sm btn-primary" onClick={() => openEditModal(about)}>Edit</button>
+                                    <button className="btn btn-sm btn-danger" onClick={() => handleDelete(about.id)}>Delete</button>
                                   </td>
                                 </tr>
                               ))}
@@ -135,43 +123,29 @@ function IndexProduk({ products }) {
                               <span className="close" onClick={closeModal}>&times;</span>
                               <form onSubmit={handleEditSubmit}>
                                 <div className="form-group">
-                                  <label htmlFor="nama_produk">Nama Produk</label>
+                                  <label htmlFor="judul">Judul</label>
                                   <input
                                     type="text"
                                     className="form-control"
-                                    id="nama_produk"
-                                    name="nama_produk"
-                                    value={editFormData.nama_produk}
-                                    onChange={(e) => setEditFormData({ ...editFormData, nama_produk: e.target.value })}
+                                    id="judul"
+                                    name="judul"
+                                    value={editFormData.judul}
+                                    onChange={(e) => setEditFormData({ ...editFormData, judul: e.target.value })}
                                     required
                                   />
                                 </div>
                                 <div className="form-group">
-                                  <label htmlFor="harga">Harga</label>
-                                  <input
-                                    type="number"
+                                  <label htmlFor="deskripsi">Deskripsi</label>
+                                  <textarea
                                     className="form-control"
-                                    id="harga"
-                                    name="harga"
-                                    value={editFormData.harga}
-                                    onChange={(e) => setEditFormData({ ...editFormData, harga: e.target.value })}
+                                    id="deskripsi"
+                                    name="deskripsi"
+                                    value={editFormData.deskripsi}
+                                    onChange={(e) => setEditFormData({ ...editFormData, deskripsi: e.target.value })}
                                     required
                                   />
                                 </div>
-                                <div className="form-group">
-                                  <label htmlFor="ketersediaan">Ketersediaan</label>
-                                  <select
-                                    className="form-control"
-                                    id="ketersediaan"
-                                    name="ketersediaan"
-                                    value={editFormData.ketersediaan}
-                                    onChange={(e) => setEditFormData({ ...editFormData, ketersediaan: e.target.value })}
-                                    required
-                                  >
-                                    <option value="1">Tersedia</option>
-                                    <option value="0">Habis</option>
-                                  </select>
-                                </div>
+                                
                                 <button type="submit" className="btn btn-success">Update</button>
                               </form>
                             </div>
@@ -191,4 +165,4 @@ function IndexProduk({ products }) {
   );
 }
 
-export default IndexProduk;
+export default IndexAbout;
