@@ -13,12 +13,13 @@ export default function Beranda() {
         <main className="flex-grow flex flex-col items-center justify-center beranda">
           <img src="/img/super3-black.png" alt="Gambar 1" className="quote-image" />
           <div className="quote">
-            <p>
+            <p className="quote2">
               "MADU SUHITA, PELOPOR MADU MURNI DI INDONESIA BERIZIN KEMENTAN RI, DIPRODUKSI DENGAN RISET DAN TEKNOLOGI MUTAKHIR"
             </p>
-            <button>
+            <br />
+            <a href='/produk'>
               BELANJA SEKARANG
-            </button>
+            </a>
           </div>
           <img src="/img/super4-black.png" alt="Gambar 2" className="quote-image" />
         </main>

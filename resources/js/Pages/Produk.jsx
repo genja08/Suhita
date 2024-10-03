@@ -4,25 +4,31 @@ import './Produk.css';
 import Navbar from '@/Components/Navbar/Navbar';
 import Footer from '@/Components/Footer/Footer';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+
 // ... (products and reviews arrays)
 
-const ReviewCard = ({ image, quality, taste, review, rating }) => (
+const ReviewCard = ({ gambar_produk, kualitas, rasa, ulasan, rating }) => (
     <div className="review-card">
-        <img src={image} alt="Product image" className="review-image" />
-        <div>
-            <p><strong>Kualitas:</strong> {quality}</p>
-            <p><strong>Rasa:</strong> {taste}</p>
-            <p className="review-text">"{review}"</p>
+        <div className="review-image-container">
+            <img src={`http://127.0.0.1:8000${gambar_produk}`} alt="Product image" className="review-image" />
+        </div>
+        <div className="review-details">
+            <p className="review-quality"><strong>Kualitas:</strong> {kualitas}</p>
+            <p className="review-taste"><strong>Rasa:</strong> {rasa}</p>
+            <p className="review-text">"{ulasan}"</p>
             <div className="rating">
                 {Array(rating).fill().map((_, i) => (
-                    <i key={i} className="fas fa-star"></i>
+                    <FontAwesomeIcon key={i} icon={faStar} className="star-icon" />
                 ))}
             </div>
         </div>
     </div>
 );
 
-export default function Produk() {
+export default function Produk({products, reviews}) {
     const [theme, setTheme] = useState('white'); // Default theme is white
 
     const toggleTheme = () => {
@@ -53,25 +59,27 @@ export default function Produk() {
                         <section className="products-section">
                             <h2 className="section-title">Produk Kami</h2>
                             <div className="products-grid">
-                                {/* {products.map((product) => (
+                                {products.map((product) => (
                                     <div key={product.id} className="product-card">
-                                        <img src={product.image} alt={product.alt} className="product-image" />
+                                        <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.nama_produk} className="product-image" />
                                         <div className="product-info">
-                                            <p className="product-name">{product.name}</p>
-                                            <p className="product-price">{product.price}</p>
+                                            <div className="product-details">
+                                                <p className="product-name">{product.nama_produk}</p>
+                                                <p className="product-price">Rp{new Intl.NumberFormat('id-ID').format(product.harga)}</p>
+                                            </div>
                                             <button className="buy-button">Buy Now</button>
                                         </div>
                                     </div>
-                                ))} */}
+                                ))}
                             </div>
                         </section>
 
                         <section className="reviews-section">
                             <h2 className="section-title">Customer Reviews</h2>
                             <div className="reviews">
-                                {/* {reviews.map((review, index) => (
+                                {reviews.map((review, index) => (
                                     <ReviewCard key={index} {...review} />
-                                ))} */}
+                                ))}
                             </div>
                         </section>
                     </main>

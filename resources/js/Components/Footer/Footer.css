@@ -1,6 +1,6 @@
 .footer {
-    background-image: url('/img/Background.png'); /* Make sure the correct path is used */
-    background-color: #000;
+    /* background-image: url('/img/Background.png'); Make sure the correct path is used */
+    background-color: #100806;
     background-size: cover; /* Ensures the background image covers the entire area */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */

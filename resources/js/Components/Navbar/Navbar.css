@@ -1,6 +1,6 @@
 .navbar {
-    background-image: url('/img/Background.png');
-    background-color: #000;
+    /* background-image: url('/img/Background.png'); */
+    background-color: #100806;
     background-size: cover;
     /*Menyesuaikangambaragarmemenuhiseluruhnavbar*/background-position: center;
     /*Memusatkangambar*/background-repeat: no-repeat;

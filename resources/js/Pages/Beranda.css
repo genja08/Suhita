@@ -46,7 +46,7 @@
   color: #ffcc00; /* Mengubah warna teks saat hover */
 }
 
-.quote button {
+.quote a {
   background-color: #ffcc00;
   border: none;
   border-radius: 20px;
@@ -54,11 +54,10 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 20px;
   transition: background-color 0.3s ease; /* Transisi untuk efek hover */
 }
 
-.quote button:hover {
+.quote a:hover {
   background-color: #ffd700; /* Mengubah warna background saat hover */
 }
 
@@ -68,7 +67,7 @@
     font-size: 20px; /* Mengurangi ukuran font pada layar kecil */
   }
 
-  .quote button {
+  .quote a {
     font-size: 14px; /* Mengurangi ukuran font tombol pada layar kecil */
   }
 

@@ -8,6 +8,7 @@
 
 .intro-image-wrapper {
     position: relative;
+    margin-left: 100px;
 }
 body {
     transition: background-color 0.3s, color 0.3s;
@@ -22,6 +23,7 @@ body {
 .black {
     background-image: url('/img/Background2.png'); /* Replace with your image URL */
     background-size: cover;
+    margin-left: -4px;
     color: white; /* Optional: Adjust text color for better visibility on dark background */
 }
 
@@ -77,7 +79,7 @@ body {
 .intro-text {
     width: 50%; /* Lebar teks */
     padding-left: 50px; /* Jarak kiri teks */
-    font-size: 18px; /* Ukuran font */
+    font-size: 20px;
     text-align: justify; /* Menyusun teks menjadi rata kiri dan kanan */
 }
 
@@ -89,12 +91,21 @@ body {
 }
 
 .section-title {
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-left: 780px;
+    margin-right: 780px;
+    border-radius: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    color: #000;
+    text-align: center;
 }
 
-.products-grid {
+/* .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -121,41 +132,143 @@ body {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 12px;
-}
+} */
 
-.buy-button {
+/* .buy-button {
     background-color: white;
     color: black;
     border: 1px solid black;
     padding: 8px 16px;
     cursor: pointer;
-}
+} */
 
 /* Reviews Section */
-.reviews-section {
-    margin-top: 40px;
-    margin-left: 20px;
-}
+
+
+
 
 .review-card {
     display: flex;
-    border: 1px solid #ddd;
-    padding: 16px;
-    margin-bottom: 16px;
-    border-radius: 8px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 600px 30px 600px;
+    align-items: center;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.review-image-container {
+    margin-right: 20px;
 }
 
 .review-image {
-    width: 100px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 16px;
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
 }
 
-.review-text {
-    margin-top: 12px;
+.review-details {
+    flex: 1;
 }
 
-.rating i {
-    color: red;
+.review-quality, .review-taste, .review-text {
+    margin-bottom: 8px;
+    font-size: 17px;
+    color: #d99f3e;
 }
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.star-icon {
+    color: #d99f3e;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+
+
+
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 100px;
+    justify-items: center;
+
+    padding: 200px;
+}
+
+.product-card {
+    border: 2px solid #d99f3e;
+    padding: 20px;
+    background-color: #d99f3e;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Nama produk dan harga akan berada di sebelah kiri */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align ke kiri */
+}
+
+/* Nama produk */
+.product-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Harga produk */
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.buy-button {
+    padding: 10px 20px;
+    background-color: #fff; /* Warna emas */
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 20px; /* Memberikan jarak antara tombol dan teks produk */
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: #c59836; /* Sedikit lebih gelap saat dihover */
+}
+
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+

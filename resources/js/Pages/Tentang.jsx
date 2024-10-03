@@ -4,7 +4,7 @@ import './Tentang.css';
 import Navbar from '@/Components/Navbar/Navbar';
 import Footer from '@/Components/Footer/Footer';
 
-export default function Tentang() {
+export default function Tentang({ abouts, galleries }) {
     const [theme, setTheme] = useState('white'); // State to manage theme
 
     const toggleTheme = () => {
@@ -72,57 +72,34 @@ export default function Tentang() {
                     <h2 className="section-title">PURE FROM NATURE</h2>
 
                     <section className="bee-types">
-                        <div className="bee-type">
-                            <img
-                                src="/img/pure1.png"
-                                alt="Apis Mellifera bees"
+                        {abouts.map((item, index) => (
+                            <div key={index} className={`bee-type ${index % 2 === 1 ? 'reverse' : ''}`}>
+                            {index % 2 === 0 && (
+                                <img
+                                src={`http://127.0.0.1:8000${item.gambar}`}
+                                alt={item.judul}
                                 className="bee-image"
-                            />
+                                />
+                            )}
                             <div>
-                                <h3 className="bee-title">Apis Mellifera</h3>
-                                <p className="bee-description">
-                                    Lebah Apis mellifera, lebah dengan sengat dari Eropa, terkenal karena produktivitas tinggi dan madu berkualitas unggul.
-                                </p>
+                                <h3 className="bee-title">{item.judul}</h3>
+                                <p className="bee-description">{item.deskripsi}</p>
                             </div>
-                        </div>
-
-                        <div className="bee-type reverse">
-                            <div>
-                                <h3 className="bee-title">Trigona</h3>
-                                <p className="bee-description">
-                                    Lebah Trigona, lebah tanpa sengat atau kelulut, menghasilkan madu dengan karakteristik unik yang kaya akan manfaat kesehatan.
-                                </p>
-                            </div>
-                            <img
-                                src="/img/pure2.png"
-                                alt="Trigona bees"
+                            {index % 2 === 1 && (
+                                <img
+                                src={`http://127.0.0.1:8000${item.gambar}`}
+                                alt={item.judul}
                                 className="bee-image"
-                            />
-                        </div>
-
-                        <div className="bee-type">
-                            <img
-                                src="/img/pure3.png"
-                                alt="Rain Forest Honey"
-                                className="bee-image"
-                            />
-                            <div>
-                                <h3 className="bee-title">Rain Forest Honey</h3>
-                                <p className="bee-description">
-                                    Dihasilkan oleh lebah Apis dorsata yang hidup di hutan tropis, sering dikenal sebagai lebah gung atau lebah sialang.
-                                </p>
+                                />
+                            )}
                             </div>
-                        </div>
+                        ))}
                     </section>
 
                     <div className="video-section">
                         <h1 className="video-title">VIDEO</h1>
                         <div className="video-container">
-                            <img
-                                src="/img/video1.png"
-                                alt="Video thumbnail"
-                                className="video-thumbnail"
-                            />
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/0mRk23MY_1c" title="CARA BUDIDAYA LEBAH MADU DI SUHITA BEE FARM  - LAMPUNG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
 
                         <div className="video-info">
@@ -155,16 +132,16 @@ export default function Tentang() {
                     </div>
 
                     <div className="gallery-section">
-                        <button className="gallery-button">Galeri</button>
+                        <h1 className="video-title">GALERI</h1>
                         <div className="gallery-grid">
-                            <img src="/img/gallery1.png" alt="Image 1" className="gallery-image" />
-                            <img src="/img/gallery2.png" alt="Image 2" className="gallery-image" />
-                            <img src="/img/gallery3.png" alt="Image 3" className="gallery-image" />
-                            <img src="/img/gallery4.png" alt="Image 4" className="gallery-image" />
-                            <img src="/img/gallery5.png" alt="Image 5" className="gallery-image" />
-                            <img src="/img/gallery6.png" alt="Image 6" className="gallery-image" />
-                            <img src="/img/gallery7.png" alt="Image 7" className="gallery-image" />
-                            <img src="/img/gallery8.png" alt="Image 8" className="gallery-image" />
+                            {galleries.map((gallery, index) => (
+                                <img
+                                    key={index}
+                                    src={`http://127.0.0.1:8000${gallery.gambar}`}
+                                    alt={`Image ${index + 1}`}
+                                    className="gallery-image"
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

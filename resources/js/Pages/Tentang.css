@@ -3,6 +3,7 @@
     padding: 32px;
     margin-top: 10px; /* Avoid overlap with the navbar */
     overflow-y: auto; /* Allow scrolling for sections after content */
+    font-size: 20px;
 }
 
 /* Content */
@@ -35,7 +36,7 @@
     margin-bottom: 16px; /* Space between paragraphs */
     line-height: 1.6; /* Adjust line height for readability */
     text-align: justify; /* Align text for a cleaner look */
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -43,12 +44,15 @@
 .about-section {
     display: flex;
     margin-bottom: 32px;
+    margin-left: 100px;
 }
 
 .about-section2 {
     display: flex;
     margin-bottom: 32px;
     margin-top: 100px;
+    margin-left: 100px;
+
 }
 
 .about-image {
@@ -63,14 +67,14 @@
 .about-text {
     width: 50%;
     padding-left: 50px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: justify;
 }
 
 .about-text2 {
     width: 50%;
     padding-left: 50px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: justify;
 }
 /* Section Titles */
@@ -86,6 +90,8 @@
 .bee-types {
     display: flex;
     flex-direction: column;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .bee-types .bee-type {
@@ -111,7 +117,7 @@
 }
 
 .bee-description {
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 15px;
 }
 
@@ -121,7 +127,8 @@
 /* Video Section */
 .video-section {
     padding: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
 .video-title {
@@ -133,7 +140,7 @@
 .video-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 100px;
 }
 
 .video-thumbnail {
@@ -146,6 +153,8 @@
     display: flex;
     justify-content: flex-end; /* Posisi di sebelah kanan */
     margin-bottom: 16px;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
 .video-info.reverse {
@@ -175,7 +184,7 @@
 .gallery-section {
     padding: 10px;
     text-align: center;
-    background-image: url('/img/bggalerry.png'); /* Ganti dengan path gambar background */
+    /* background-image: url('/img/bggalerry.png');  */
     background-size: cover; /* Memastikan background menutupi seluruh area */
     background-position: center; /* Pusatkan gambar */
     background-repeat: no-repeat; /* Tidak mengulang gambar */
