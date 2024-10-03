@@ -1,60 +1,68 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\{
+    MainController,
+    ProfileController,
+    ProdukController,
+    AboutController,
+    ReviewController,
+    GalleryController
+};
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'canBeranda' => Route::has(name: 'beranda'),
-
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
-
+// Dashboard Route
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/views/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// ADMIN Routes Grouped by Functionality
+Route::middleware(['auth', 'verified'])->group(function () {
+    
+    // ADMIN PRODUK
+    Route::prefix('admin')->group(function () {
+        Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
+        Route::get('/tambahproduk', [ProdukController::class, 'create'])->name('createproduk');
+        Route::post('/storeproduk', [ProdukController::class, 'store'])->name('products.store');
+        Route::post('/updateproduk/{id}', [ProdukController::class, 'update'])->name('products.update');
+        Route::delete('/deleteproduk/{id}', [ProdukController::class, 'destroy'])->name('products.destroy');
+    });
 
-Route::get('/admin/produk', function () {
-    return Inertia::render('Admin/views/Produk/index');
-})->middleware(['auth', 'verified'])->name('produk');
+    // ADMIN ABOUT
+    Route::prefix('admin')->group(function () {
+        Route::get('/tentang', [AboutController::class, 'index'])->name('tentang');
+        Route::get('/tambahabout', [AboutController::class, 'create'])->name('createabout');
+        Route::post('/storeabout', [AboutController::class, 'store'])->name('abouts.store');
+        Route::post('/updateabout/{id}', [AboutController::class, 'update'])->name('abouts.update');
+        Route::delete('/deleteabout/{id}', [AboutController::class, 'destroy'])->name('abouts.destroy');
+    });
 
-Route::get('/admin/tambahproduk', function () {
-    return Inertia::render('Admin/views/Produk/create');
-})->middleware(['auth', 'verified'])->name('createproduk');
+    // ADMIN REVIEW
+    Route::prefix('admin')->group(function () {
+        Route::get('/review', [ReviewController::class, 'index'])->name('review');
+        Route::get('/tambahreview', [ReviewController::class, 'create'])->name('createreview');
+        Route::post('/storereview', [ReviewController::class, 'store'])->name('reviews.store');
+        Route::post('/updatereview/{id}', [ReviewController::class, 'update'])->name('reviews.update');
+        Route::delete('/deletereview/{id}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
+    });
 
-
-Route::post('/admin/storeproduk', [ProdukController::class, 'store'])
-    ->middleware(['auth', 'verified']);
-
-// Route::get('/beranda', function () {
-//     return Inertia::render('Beranda');
-// })->name('beranda');
-
-Route::get('/', function () {
-    return Inertia::render('Beranda');
+    // ADMIN GALLERY
+    Route::prefix('admin')->group(function () {
+        Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+        Route::get('/tambahgallery', [GalleryController::class, 'create'])->name('creategallery');
+        Route::post('/storegallery', [GalleryController::class, 'store'])->name('gallery.store');
+        Route::delete('/deletegallery/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+    });
 });
-Route::get('/tentang', function () {
-    return Inertia::render('Tentang');
-});
-Route::get('/produk', function () {
-    return Inertia::render('Produk');
-});
-Route::get('/kontak', function () {
-    return Inertia::render('Kontak');
-});
 
-// Route::get('/dashboardadmin', function () {
-//     return Inertia::render('Admin/views/Dashboard');
-// });
+// Public Routes for Main Website
+Route::get('/', [MainController::class, 'beranda'])->name('main.beranda');
+Route::get('/tentang', [MainController::class, 'tentang'])->name('main.tentang');
+Route::get('/produk', [MainController::class, 'produk'])->name('main.produk');
+Route::get('/kontak', [MainController::class, 'kontak'])->name('main.kontak');
 
+// Profile Routes (requires authentication)
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

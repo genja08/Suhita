@@ -41,10 +41,8 @@ import {
 
 function Dashboard(props) {
     const [formData, setFormData] = useState({
-      nama_produk: "",
-      deskripsi: "",
-      harga: "",
-      ketersediaan: "",
+      judul: "",
+      deskripsi: ""
     });
     const [file, setFile] = useState(null);
   
@@ -65,18 +63,18 @@ function Dashboard(props) {
         data.append(key, formData[key]);
       }
       if (file) {
-        data.append("gambar_produk", file); // Ensure name matches 'gambar_produk'
+        data.append("gambar", file); // Ensure name matches 'gambar'
       }
     
       try {
-        const response = await axios.post("/admin/storeproduk", data, {
+        const response = await axios.post("/admin/storeabout", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
         console.log(response.data);
         alert(response.data.message); // This will display the success message from the server
-        window.location.href = '/admin/produk';
+        window.location.href = '/admin/tentang';
       } catch (error) {
         console.error("Error submitting form:", error);
         if (error.response && error.response.data.message) {
@@ -100,7 +98,7 @@ function Dashboard(props) {
                     <CardHeader>
                       <Row>
                         <Col className="text-left" sm="6">
-                          <CardTitle tag="h2">Produk</CardTitle>
+                          <CardTitle tag="h2">Tentang Kami</CardTitle>
                         </Col>
                       </Row>
                     </CardHeader>
@@ -108,31 +106,19 @@ function Dashboard(props) {
                       <Row>
                         <Col lg="12">
                           <div className="container">
-                            <h2 className="text-white mt-4">Tambah Produk</h2>
+                            <h2 className="text-white mt-4">Tambah Data Tentang Kami</h2>
                             <form onSubmit={handleSubmit}>
                               <div className="form-group">
-                                <label htmlFor="nama_produk" className="text-white">Nama Produk</label>
-                                <input type="text" className="form-control" id="nama_produk" name="nama_produk" value={formData.nama_produk} onChange={handleInputChange} placeholder="Nama produk" required />
+                                <label htmlFor="judul" className="text-white">Judul</label>
+                                <input type="text" className="form-control" id="judul" name="judul" value={formData.judul} onChange={handleInputChange} placeholder="Nama produk" required />
                               </div>
                               <div className="form-group mt-3">
                                 <label htmlFor="deskripsi" className="text-white">Deskripsi</label>
                                 <textarea name="deskripsi" id="deskripsi" className="form-control" value={formData.deskripsi} onChange={handleInputChange} placeholder="Deskripsi" required></textarea>
                               </div>
                               <div className="form-group">
-                                <label htmlFor="harga" className="text-white">Harga</label>
-                                <input type="number" className="form-control" id="harga" name="harga" value={formData.harga} onChange={handleInputChange} placeholder="Harga produk" required />
-                              </div>
-                              <div className="form-group">
-                                <label htmlFor="gambar_produk" className="text-white">Foto Produk</label>
-                                <input type="file" className="form-control" id="gambar_produk" name="gambar_produk" onChange={handleFileChange} accept=".png" placeholder="Foto produk format .PNG" required />
-                              </div>
-                              <div className="form-group mt-3">
-                                <label htmlFor="ketersediaan" className="text-white">Ketersediaan</label>
-                                <select className="form-control" id="ketersediaan" name="ketersediaan" value={formData.ketersediaan} onChange={handleInputChange} required>
-                                  <option value="">Pilih</option>
-                                  <option value="1">Tersedia</option>
-                                  <option value="0">Belum Tersedia</option>
-                                </select>
+                                <label htmlFor="gambar" className="text-white">Gambar</label>
+                                <input type="file" className="form-control" id="gambar" name="gambar" onChange={handleFileChange} accept=".png" placeholder="Foto produk format .PNG" required />
                               </div>
                               <button type="submit" className="btn btn-primary mt-3">Submit</button>
                             </form>
