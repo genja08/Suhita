@@ -1,40 +1,79 @@
 .navbar {
+    background-image: url('/img/Background.png');
     background-color: #000;
-    padding: 20px;
+    background-size: cover;
+    /*Menyesuaikangambaragarmemenuhiseluruhnavbar*/background-position: center;
+    /*Memusatkangambar*/background-repeat: no-repeat;
+    /*Agargambartidakdiulang*/padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
 }
-  
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9); /* Navbar lebih transparan saat scroll */
+    background-image: none; /* Menghapus gambar saat scroll jika diinginkan */
+}
+
 .logo {
     height: 50px;
+    transition: transform 0.3s ease;
 }
-  
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
 .nav {
     display: flex;
     gap: 20px;
 }
-  
+
 .nav a {
-    color: #ffcc00;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
-  
+
+.nav a:hover {
+    color: #ffcc00;
+}
+
 .searchBar {
     background-color: #fff;
     border-radius: 20px;
     padding: 5px 10px;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
-  
+
 .searchBar input {
     border: none;
     outline: none;
     padding: 5px;
 }
-  
+
+.searchBar input:focus {
+    background-color: #f0f0f0;
+}
+
 .searchBar i {
     color: #000;
+}
+
+.nav a.active {
+    color: #ffcc00; /* Change to your desired active color */
+    font-weight: bold; /* Make it bold or any style you prefer */
 }

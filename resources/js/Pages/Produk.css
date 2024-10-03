@@ -2,36 +2,90 @@
 .intro {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin: 120px 0; /* Increased margin for separation */
+    margin-left: 20px;
 }
 
 .intro-image-wrapper {
     position: relative;
 }
+body {
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: -2px;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.black {
+    background-image: url('/img/Background2.png'); /* Replace with your image URL */
+    background-size: cover;
+    color: white; /* Optional: Adjust text color for better visibility on dark background */
+}
+
+/* Additional Styles */
+.theme-toggle {
+    position: absolute;
+    /*Useabsolutepositioning*/top: 20px;
+    /*Distancefromthetop*/right: 20px;
+    /*Distancefromtheright*/padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: lightgray;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    /*Ensureitappearsaboveotherelements*/
+    margin-top: 75px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.theme-toggle:hover {
+    background-color: gray;
+}
+.intro {
+    display: flex; /* Mengatur elemen dalam baris */
+    margin-bottom: 32px; /* Jarak bawah */
+}
+
+.intro-image-wrapper {
+    width: 40%; /* Lebar gambar */
+    position: relative; /* Agar elemen anak bisa diposisikan secara absolut */
+}
 
 .intro-bg {
-    position: absolute;
+    position: absolute; /* Agar gambar background tetap di belakang */
     top: 0;
     left: 0;
-    width: 120px;
-    height: 120px;
-    background-color: yellow;
-    z-index: -1;
+    right: 0;
+    bottom: 0;
+    background-image: url('/img/intro-bg.png'); /* Ganti dengan path gambar background */
+    background-size: cover; /* Memastikan gambar menutupi area */
+    background-position: center; /* Pusatkan gambar */
+    z-index: -1; /* Menempatkan gambar di belakang konten */
 }
 
 .intro-image {
-    width: 300px;
-    height: 300px;
+    width: 100%; /* Mengatur lebar gambar agar mengikuti kontainer */
+    border-radius: 10px; /* Membuat sudut gambar melengkung */
 }
 
 .intro-text {
-    margin-left: 20px;
-    text-align: left;
+    width: 50%; /* Lebar teks */
+    padding-left: 50px; /* Jarak kiri teks */
+    font-size: 18px; /* Ukuran font */
+    text-align: justify; /* Menyusun teks menjadi rata kiri dan kanan */
 }
+
 
 /* Products Section */
 .products-section {
-    margin-bottom: 40px;
+    margin: 40px 0; /* Added margin for separation */
+    margin-left: 20px;
 }
 
 .section-title {
@@ -80,6 +134,7 @@
 /* Reviews Section */
 .reviews-section {
     margin-top: 40px;
+    margin-left: 20px;
 }
 
 .review-card {

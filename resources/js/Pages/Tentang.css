@@ -1,93 +1,291 @@
 /* Main Content */
 .main-content {
     padding: 32px;
+    margin-top: 10px; /* Avoid overlap with the navbar */
+    overflow-y: auto; /* Allow scrolling for sections after content */
 }
+
+/* Content */
+.content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center align images and text */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content img {
+    max-width: 30%; /* Adjust the image size to 80% of the container */
+    height: auto;   /* Maintain aspect ratio */
+    display: block; /* Treat image as block element */
+    margin: 16px auto; /* Center the image */
+}
+
+/* Divider (Optional styling) */
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 16px 0;
+}
+
+.content p {
+    margin-bottom: 16px; /* Space between paragraphs */
+    line-height: 1.6; /* Adjust line height for readability */
+    text-align: justify; /* Align text for a cleaner look */
+    font-size: 18px;
+}
+
+
+/* About Section */
 .about-section {
     display: flex;
     margin-bottom: 32px;
 }
+
+.about-section2 {
+    display: flex;
+    margin-bottom: 32px;
+    margin-top: 100px;
+}
+
 .about-image {
-    width: 50%;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.about-image2 {
+    width: 30%;
+    border-radius: 10px;
 }
 .about-text {
     width: 50%;
-    padding-left: 16px;
+    padding-left: 50px;
     font-size: 18px;
+    text-align: justify;
 }
+
+.about-text2 {
+    width: 50%;
+    padding-left: 50px;
+    font-size: 18px;
+    text-align: justify;
+}
+/* Section Titles */
 .section-title {
+    padding-top: 70px;
     text-align: center;
     font-size: 32px;
-    margin-bottom: 16px;
+    margin: 32px 0;
 }
+
+/* Bee Types Section */
+/* Bee Types Section */
+.bee-types {
+    display: flex;
+    flex-direction: column;
+}
+
 .bee-types .bee-type {
     display: flex;
+    justify-content: flex-start; /* Posisi kiri */
     margin-bottom: 32px;
+    align-items: center;
 }
-.bee-type.reverse {
-    flex-direction: row-reverse;
+
+.bee-types .bee-type.reverse {
+    justify-content: flex-end; /* Posisi kanan */
 }
+
 .bee-image {
     width: 25%;
+    border-radius: 10px;
 }
+
 .bee-title {
     font-size: 24px;
     margin-bottom: 8px;
+    margin-left: 15px;
 }
+
 .bee-description {
     font-size: 18px;
+    margin-left: 15px;
 }
+
+
+
 
 /* Video Section */
 .video-section {
     padding: 32px;
+    margin-bottom: 20px;
 }
+
 .video-title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 16px;
 }
+
 .video-container {
     display: flex;
     justify-content: center;
     margin-bottom: 16px;
 }
+
 .video-thumbnail {
     width: 100%;
     max-width: 800px;
+    border-radius: 10px;
 }
+
 .video-info {
     display: flex;
+    justify-content: flex-end; /* Posisi di sebelah kanan */
     margin-bottom: 16px;
 }
+
 .video-info.reverse {
-    flex-direction: row-reverse;
+    justify-content: flex-start; /* Posisi di sebelah kiri */
+    /* flex-direction: row-reverse; */
 }
+
 .video-image {
-    width: 50%;
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
+
 .video-text {
     width: 50%;
     padding-left: 16px;
 }
 
+.video-text h2 {
+    font-size: 24px;
+    font-style: bold;
+    margin-bottom: 10px;
+}
+
+
 /* Gallery Section */
 .gallery-section {
-    padding: 32px;
+    padding: 10px;
     text-align: center;
+    background-image: url('/img/bggalerry.png'); /* Ganti dengan path gambar background */
+    background-size: cover; /* Memastikan background menutupi seluruh area */
+    background-position: center; /* Pusatkan gambar */
+    background-repeat: no-repeat; /* Tidak mengulang gambar */
 }
+
 .gallery-button {
     background-color: black;
     color: white;
     padding: 8px 16px;
     border-radius: 4px;
 }
+
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom */
+    grid-template-rows: auto; /* Menyesuaikan tinggi baris otomatis */
     gap: 16px;
     margin: 32px 0;
 }
+
 .gallery-image {
     width: 100%;
-    height: auto;
+    height: 200px; /* Atur tinggi yang sama untuk setiap gambar */
+    object-fit: cover; /* Pastikan gambar tetap dalam proporsi */
+    border-radius: 10px;
+}
+
+.gallery-text {
+    font-size: 18px;
+    margin-top: 16px;
+}
+
+
+.decorative-icon {
+    margin-top: 16px;
+}
+
+/* Tentang.css */
+
+/* Main Content */
+.min-h-screen.white {
+    background-color: white; /* White background */
+    color: black; /* Text color for white theme */
+}
+
+.min-h-screen.black {
+    background-image: url('/img/Background2.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire background */
+    color: white; /* Text color for black theme */
+    margin-left: -20px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 32px;
+    margin-top: 10px; /* Avoid overlap with the navbar */
+    overflow-y: auto; /* Allow scrolling for sections after content */
+}
+
+/* Content */
+.content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center align images and text */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ... (rest of your CSS remains unchanged) */
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: absolute; /* Use absolute positioning */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: lightgray;
+    transition: background-color 0.3s;
+    z-index: 1000; /* Ensure it appears above other elements */
+    margin-top: 75px;
+    border-radius: 20px;
+}
+
+.theme-toggle:hover {
+    background-color: gray;
+}
+
+.image-white {
+    max-width: 30%; /* Adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Treat image as block element */
+    margin: 16px auto; /* Center the image */
+}
+
+/* Styles for images in black theme */
+.image-black {
+    max-width: 30%; /* Same size as the white theme */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Treat image as block element */
+    margin: 16px auto; /* Center the image */
+    filter: brightness(0.8); /* Dim the images for better contrast against dark background */
+    /* You can also add more styles like opacity or adjustments based on your design */
+}
+
+/* Ensure text is readable on the black theme */
+.min-h-screen.black p {
+    color: white; /* Ensure text color contrasts with the background */
 }

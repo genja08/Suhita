@@ -10,15 +10,17 @@ export default function Beranda() {
       <Head title="Beranda" />
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center bg-gray-100">
-          <div className="text-center max-w-2xl mx-auto px-4">
-            <p className="text-xl mb-6">
+        <main className="flex-grow flex flex-col items-center justify-center beranda">
+          <img src="/img/super3-black.png" alt="Gambar 1" className="quote-image" />
+          <div className="quote">
+            <p>
               "MADU SUHITA, PELOPOR MADU MURNI DI INDONESIA BERIZIN KEMENTAN RI, DIPRODUKSI DENGAN RISET DAN TEKNOLOGI MUTAKHIR"
             </p>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button>
               BELANJA SEKARANG
             </button>
           </div>
+          <img src="/img/super4-black.png" alt="Gambar 2" className="quote-image" />
         </main>
         <Footer />
       </div>

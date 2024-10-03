@@ -1,30 +1,87 @@
 .beranda {
-    flex: 1;
-    text-align: center;
-    padding: 50px 20px;
-  }
-  
-  .quote {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid #ffcc00;
-    border-radius: 10px;
-    padding: 20px;
-    display: inline-block;
-    max-width: 800px;
-  }
-  
+  flex: 1;
+  text-align: center;
+  padding: 50px 20px; /* Menambahkan padding vertikal */
+  background-image: url('/img/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+  margin-left: -3px;
+}
+
+.quote {
+  background-image: url('/img/bgberanda.png');
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #ffcc00;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+  max-width: 800px;
+  animation: fadeIn 0.5s ease-in-out; /* Tambahkan animasi */
+}
+
+.quote-image {
+  max-width: 300px;
+  width: 100%;
+  margin: 20px 0;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.quote-image:hover {
+  transform: scale(1.05); /* Efek zoom pada gambar */
+}
+
+.quote p {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+  transition: color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.quote:hover p {
+  color: #ffcc00; /* Mengubah warna teks saat hover */
+}
+
+.quote button {
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.quote button:hover {
+  background-color: #ffd700; /* Mengubah warna background saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
   .quote p {
-    font-size: 24px;
-    margin: 0;
+    font-size: 20px; /* Mengurangi ukuran font pada layar kecil */
   }
-  
+
   .quote button {
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
+    font-size: 14px; /* Mengurangi ukuran font tombol pada layar kecil */
   }
+
+  .quote-image {
+    max-width: 200px; /* Mengurangi ukuran gambar pada layar kecil */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Awal transparan */
+  }
+  100% {
+    opacity: 1; /* Akhir tidak transparan */
+  }
+}

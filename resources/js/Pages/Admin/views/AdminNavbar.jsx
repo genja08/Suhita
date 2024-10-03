@@ -2,6 +2,7 @@
 import React from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
 import axios from 'axios';
+import './AdminNavbar.css';
 
 const handleLogout = async () => {
   try {
@@ -16,6 +17,7 @@ const handleLogout = async () => {
 function AdminNavbar() {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
+      <img src="/img/logo.png" className="navbarlogo" alt="" />
       <Container fluid>
         <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

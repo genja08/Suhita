@@ -1,24 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+
+    // Toggle scrolled state
+    setScrolled(offset > 50);
+
+    // Define sections to check visibility
+    const sections = ['beranda', 'tentang', 'produk', 'kontak'];
+    
+    sections.forEach(section => {
+      const sectionElement = document.getElementById(section);
+      if (sectionElement) {
+        const sectionTop = sectionElement.offsetTop;
+        const sectionHeight = sectionElement.clientHeight;
+
+        if (offset >= sectionTop - sectionHeight / 2 && offset < sectionTop + sectionHeight / 2) {
+          setActiveLink(section); // Set active link
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className='navbar'>
-      {/* <img 
-        src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-n5uger90w7XGpnsAqn8yAHV5.png" 
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <img 
+        src="/img/logo.png" 
         alt="Suhita Logo" 
         className='logo'
-      /> */}
+      />
       <div className='nav'>
-        {/* <Link to="/">BERANDA</Link>
-        <Link to="/">TENTANG KAMI</Link>
-        <Link to="/">PRODUK</Link>
-        <Link to="/">KONTAK</Link> */}
-
-        <a href="/">BERANDA</a>
-        <a href="/tentang">TENTANG KAMI</a>
-        <a href="/produk">PRODUK</a>
-        <a href="/kontak">KONTAK</a>
+        <a href="/" className={activeLink === '/beranda' ? 'active' : ''}>BERANDA</a>
+        <a href="/tentang" className={activeLink === 'tentang' ? 'active' : ''}>TENTANG KAMI</a>
+        <a href="/produk" className={activeLink === 'produk' ? 'active' : ''}>PRODUK</a>
+        <a href="/kontak" className={activeLink === 'kontak' ? 'active' : ''}>KONTAK</a>
       </div>
       <div className='searchBar'>
         <input type="text" placeholder="Search ..." />

@@ -1,0 +1,17 @@
+.navbarlogo {
+    width: 100px; /* Atur lebar sesuai kebutuhan */
+    height: auto; /* Sesuaikan tinggi secara proporsional */
+    object-fit: contain; /* Pastikan logo tidak terdistorsi */
+  }
+
+  .menu-item {
+    display: flex;           /* Membuat elemen teks dan ikon dalam satu baris */
+    justify-content: space-between; /* Memastikan teks di kiri dan ikon di kanan */
+    align-items: center;     /* Menyelaraskan teks dan ikon secara vertikal */
+    width: 100%;             /* Agar item menu mengambil lebar penuh */
+  }
+  
+  .menu-item-icon {
+    margin-left: 10px;       /* Memberi sedikit jarak antara teks dan ikon */
+    font-size: 1.2em;        /* Sesuaikan ukuran ikon, bisa diubah sesuai kebutuhan */
+  }
