@@ -124,6 +124,8 @@ function Dashboard(props) {
                               </div>
                               <div className="form-group">
                                 <label htmlFor="gambar_produk" className="text-white">Foto Produk</label>
+                                <br/>
+                                <label htmlFor="gambar_produk" className="btn btn-secondary mt-2">Pilih Gambar</label>
                                 <input type="file" className="form-control" id="gambar_produk" name="gambar_produk" onChange={handleFileChange} accept=".png" placeholder="Foto produk format .PNG" required />
                               </div>
                               <div className="form-group mt-3">

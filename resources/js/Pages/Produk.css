@@ -95,11 +95,13 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
     background-color: rgba(255, 255, 255, 0.8);
-    margin-left: 780px;
-    margin-right: 780px;
+    /* margin-left: 780px;
+    margin-right: 780px; */
     border-radius: 10px;
     padding-top: 7px;
     padding-bottom: 7px;
+    text-align: center;
+    align-items: center;
 
     color: #000;
     text-align: center;
@@ -143,45 +145,58 @@ body {
 } */
 
 /* Reviews Section */
-
-
-
-
+/* Review card container */
+/* Review card container with white background and gold border */
 .review-card {
     display: flex;
-    background-color: #333;
+    flex-direction: column;
+    background-color: #fff; /* Background menjadi putih */
+    border: 2px solid #d99f3e; /* Borderline emas */
     border-radius: 10px;
     padding: 20px;
-    margin: 10px 600px 30px 600px;
+    margin: 10px auto;
     align-items: center;
-    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Warna teks lebih gelap agar terlihat pada background putih */
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.03); /* Efek hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .review-image-container {
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .review-image {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: auto;
     border-radius: 8px;
+    object-fit: cover;
 }
 
 .review-details {
     flex: 1;
+    display: flex;
+    flex-direction: column; /* Susun konten vertikal dalam details */
+    align-items: flex-start; /* Rata kiri konten teks dan rating */
 }
 
-.review-quality, .review-taste, .review-text {
+.review-quality, 
+.review-taste, 
+.review-text {
     margin-bottom: 8px;
     font-size: 17px;
-    color: #d99f3e;
+    color: #d99f3e; /* Tetap menggunakan warna emas untuk elemen penting */
 }
 
 .rating {
     display: flex;
-    align-items: center;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -190,6 +205,35 @@ body {
     margin-right: 5px;
     font-size: 18px;
 }
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .review-card {
+        flex-direction: row; /* Tampilkan gambar di samping ulasan pada layar besar */
+        padding: 30px;
+    }
+
+    .review-image-container {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .review-details {
+        text-align: left;
+    }
+}
+
+@media (max-width: 767px) {
+    .review-card {
+        margin: 10px 20px; /* Margin untuk layar kecil */
+    }
+
+    .review-text {
+        font-size: 16px;
+    }
+}
+
+
 
 
 
