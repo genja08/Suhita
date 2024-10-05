@@ -83,8 +83,44 @@ function IndexProduk({ products }) {
                 <Card className="card-chart">
                   <CardHeader>
                     <Row>
-                      <Col className="text-left" sm="6">
+                      <Col className="text-left" sm="12">
                         <CardTitle tag="h2">Produk</CardTitle>
+                        <a href="/admin/tambahproduk" className="btn btn-sm btn-info mt-3">Tambah Produk</a>
+                        <table className="table table-hover w-100 mt-3">
+                            <thead className="text-white">
+                                <th scope="col">#</th>
+                                <th scope="col">Nama Produk</th>
+                                <th scope="col">Harga</th>
+                                <th scope="col">Gambar Produk</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Ketersediaan</th>
+                                <th scope="col">Actions</th>
+                            </thead>
+                            <tbody>
+                              {products.map((product, index) => (
+                                <tr key={product.id}>
+                                  <td>{index + 1}</td>
+                                  <td>{product.nama_produk}</td>
+                                  <td>{product.harga}</td>
+                                  <td>
+                                    <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
+                                  </td>
+                                  <td>{product.deskripsi}</td>
+                                  <td>
+                                    {product.ketersediaan === 1 ? (
+                                      <span className="badge badge-success text-dark">Tersedia</span>
+                                    ) : (
+                                      <span className="badge badge-danger text-dark">Habis</span>
+                                    )}
+                                  </td>
+                                  <td>
+                                    <button className="btn btn-sm btn-primary" onClick={() => openEditModal(product)}>Edit</button>
+                                    <button className="btn btn-sm btn-danger" onClick={() => handleDelete(product.id)}>Delete</button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
                       </Col>
                     </Row>
                   </CardHeader>
@@ -92,8 +128,8 @@ function IndexProduk({ products }) {
                     <Row>
                       <Col lg="12">
                         <div className="container">
-                          <a href="/admin/tambahproduk" className="btn btn-sm btn-info">Tambah Produk</a>
-                          <table className="table table-dark table-hover w-100">
+                          {/* <a href="/admin/tambahproduk" className="btn btn-sm btn-info">Tambah Produk</a> */}
+                          {/* <table className="table table-dark table-hover w-100">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
@@ -129,7 +165,7 @@ function IndexProduk({ products }) {
                                 </tr>
                               ))}
                             </tbody>
-                          </table>
+                          </table> */}
                         </div>
 
                         {/* Edit Modal */}

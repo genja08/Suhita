@@ -12,7 +12,7 @@ const Footer = () => {
         <div>
           <div>Hubungi Kami</div>
           <div className='socialIcons'>
-            <a href="#"><i className="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product"><i className="fab fa-whatsapp"></i></a>
             <a href="#"><i className="fab fa-facebook-f"></i></a>
             <a href="#"><i className="fab fa-instagram"></i></a>
             <a href="#"><i className="fab fa-youtube"></i></a>

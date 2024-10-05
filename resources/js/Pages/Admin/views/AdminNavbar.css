@@ -15,3 +15,9 @@
     margin-left: 10px;       /* Memberi sedikit jarak antara teks dan ikon */
     font-size: 1.2em;        /* Sesuaikan ukuran ikon, bisa diubah sesuai kebutuhan */
   }
+
+  .navtext{
+    font-weight: bold;
+    font-size: 1.2em;        /* Sesuaikan ukuran ikon, bisa diubah sesuai kebutuhan */
+
+  }

@@ -31,7 +31,7 @@ class MainController extends Controller
     }
     
     public function produk(){
-        $products = Products::all();
+        $products = Products::where('ketersediaan', 1)->get();
         $reviews = Review::join('products', 'reviews.id_produk', '=', 'products.id')
         ->select('reviews.*', 'products.nama_produk', 'products.gambar_produk')
         ->get();

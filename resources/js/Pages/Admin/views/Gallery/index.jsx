@@ -47,8 +47,29 @@ function IndexGallery({ galleries }) {
                 <Card className="card-chart">
                   <CardHeader>
                     <Row>
-                      <Col className="text-left" sm="6">
+                      <Col className="text-left" sm="12">
                         <CardTitle tag="h2">Gallery</CardTitle>
+                        <a href="/admin/tambahgallery" className="btn btn-sm btn-info mt-3">Tambah Foto</a>
+                          <table className="table table-hover w-100 mt-3 text-white">
+                            <thead>
+                                <th scope="col">#</th>
+                                <th scope="col">Gambar</th>
+                                <th scope="col">Actions</th>
+                            </thead>
+                            <tbody>
+                                {galleries.map((gallery, index) => (
+                                    <tr key={gallery.id}>
+                                      <td>{index + 1}</td>
+                                      <td>
+                                          <img src={`http://127.0.0.1:8000${gallery.gambar}`} alt={gallery.gambar} width="100" height="100" /> 
+                                      </td>
+                                      <td>
+                                          <button className="btn btn-sm btn-danger" onClick={() => handleDelete(gallery.id)}>Delete</button>
+                                      </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                          </table>
                       </Col>
                     </Row>
                   </CardHeader>
@@ -56,7 +77,7 @@ function IndexGallery({ galleries }) {
                     <Row>
                       <Col lg="12">
                         <div className="container">
-                          <a href="/admin/tambahgallery" className="btn btn-sm btn-info">Tambah Foto</a>
+                          {/* <a href="/admin/tambahgallery" className="btn btn-sm btn-info">Tambah Foto</a>
                           <table className="table table-dark table-hover w-100">
                             <thead>
                               <tr>
@@ -78,7 +99,7 @@ function IndexGallery({ galleries }) {
                                     </tr>
                                 ))}
                             </tbody>
-                          </table>
+                          </table> */}
                         </div>
                       </Col>
                     </Row>

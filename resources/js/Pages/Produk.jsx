@@ -67,7 +67,14 @@ export default function Produk({products, reviews}) {
                                                 <p className="product-name">{product.nama_produk}</p>
                                                 <p className="product-price">Rp{new Intl.NumberFormat('id-ID').format(product.harga)}</p>
                                             </div>
-                                            <button className="buy-button">Buy Now</button>
+                                            <button
+                                                className="buy-button"
+                                                onClick={() => {
+                                                    window.open('https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product', '_blank');
+                                                }}
+                                                >
+                                                Buy Now
+                                            </button>
                                         </div>
                                     </div>
                                 ))}

@@ -78,8 +78,34 @@ function IndexAbout({ abouts }) {
                 <Card className="card-chart">
                   <CardHeader>
                     <Row>
-                      <Col className="text-left" sm="6">
+                      <Col className="text-left" sm="12">
                         <CardTitle tag="h2">Tentang</CardTitle>
+                        <a href="/admin/tambahabout" className="btn btn-sm btn-info mt-3">Tambah Data</a>
+                          <table className="table table-hover w-100 text-white mt-3">
+                            <thead>
+                                <th scope="col">#</th>
+                                <th scope="col">Judul</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Gambar</th>
+                                <th scope="col">Actions</th>
+                            </thead>
+                            <tbody>
+                              {abouts.map((about, index) => (
+                                <tr key={about.id}>
+                                  <td>{index + 1}</td>
+                                  <td>{about.judul}</td>
+                                  <td>{about.deskripsi}</td>
+                                  <td>
+                                    <img src={`http://127.0.0.1:8000${about.gambar}`} alt={about.gambar} width="100" height="100" />
+                                  </td>
+                                  <td>
+                                    <button className="btn btn-sm btn-primary" onClick={() => openEditModal(about)}>Edit</button>
+                                    <button className="btn btn-sm btn-danger" onClick={() => handleDelete(about.id)}>Delete</button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
                       </Col>
                     </Row>
                   </CardHeader>
@@ -87,7 +113,7 @@ function IndexAbout({ abouts }) {
                     <Row>
                       <Col lg="12">
                         <div className="container">
-                          <a href="/admin/tambahabout" className="btn btn-sm btn-info">Tambah Data</a>
+                          {/* <a href="/admin/tambahabout" className="btn btn-sm btn-info">Tambah Data</a>
                           <table className="table table-dark table-hover w-100">
                             <thead>
                               <tr>
@@ -114,7 +140,7 @@ function IndexAbout({ abouts }) {
                                 </tr>
                               ))}
                             </tbody>
-                          </table>
+                          </table> */}
                         </div>
 
                         {/* Edit Modal

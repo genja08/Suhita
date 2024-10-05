@@ -397,6 +397,8 @@
 .min-h-screen.white {
     background-color: white; /* White background */
     color: black; /* Text color for white theme */
+    margin-left: -20px;
+
 }
 
 .min-h-screen.black {

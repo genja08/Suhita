@@ -92,8 +92,36 @@ function IndexReview({ reviews, products }) {
                 <Card className="card-chart">
                   <CardHeader>
                     <Row>
-                      <Col className="text-left" sm="6">
+                      <Col className="text-left" sm="12">
                         <CardTitle tag="h2">Review</CardTitle>
+                          <a href="/admin/tambahreview" className="btn btn-sm btn-info mt-3">Tambah Data</a>
+                          <table className="table table-hover w-100 mt-3 text-white">
+                            <thead>
+                                <th scope="col">#</th>
+                                <th scope="col">ID Product</th>
+                                <th scope="col">Kualitas</th>
+                                <th scope="col">Rasa</th>
+                                <th scope="col">Ulasan</th>
+                                <th scope="col">Rating</th>
+                                <th scope="col">Actions</th>
+                            </thead>
+                            <tbody>
+                              {reviews.map((review, index) => (
+                                <tr key={review.id}>
+                                  <td>{index + 1}</td>
+                                  <td>{review.nama_produk}</td>
+                                  <td>{review.kualitas}</td>
+                                  <td>{review.rasa}</td>
+                                  <td>{review.ulasan}</td>
+                                  <td>{review.rating}</td>
+                                  <td>
+                                    <button className="btn btn-sm btn-primary" onClick={() => openEditModal(review)}>Edit</button>
+                                    <button className="btn btn-sm btn-danger" onClick={() => handleDelete(review.id)}>Delete</button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
                       </Col>
                     </Row>
                   </CardHeader>
@@ -101,7 +129,7 @@ function IndexReview({ reviews, products }) {
                     <Row>
                       <Col lg="12">
                         <div className="container">
-                          <a href="/admin/tambahreview" className="btn btn-sm btn-info">Tambah Data</a>
+                          {/* <a href="/admin/tambahreview" className="btn btn-sm btn-info">Tambah Data</a>
                           <table className="table table-dark table-hover w-100">
                             <thead>
                               <tr>
@@ -130,7 +158,7 @@ function IndexReview({ reviews, products }) {
                                 </tr>
                               ))}
                             </tbody>
-                          </table>
+                          </table> */}
                         </div>
 
                         {/* Edit Modal */}

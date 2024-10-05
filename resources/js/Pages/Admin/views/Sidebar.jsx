@@ -8,7 +8,6 @@ function Sidebar() {
   return (
     <div className="bg-dark vh-100" style={{ width: '250px', position: 'fixed' }}>
       <Nav className="flex-column p-3">
-        <h4 className="text-white">Admin</h4>
 
         <Nav.Item>
           <Nav.Link href="/dashboard" className="text-white menu-item">

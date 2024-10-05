@@ -19,7 +19,7 @@ export default function Kontak() {
           </p>
           <div className="contact-info">
             <div className="contact-item">
-              <a href="#">
+              <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product">
                 <img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" />
                 082279255702
               </a>

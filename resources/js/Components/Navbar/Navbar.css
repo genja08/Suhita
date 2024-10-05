@@ -66,7 +66,9 @@
 }
 
 .searchBar input:focus {
-    background-color: #f0f0f0;
+    border: 0px solid #000; 
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .searchBar i {

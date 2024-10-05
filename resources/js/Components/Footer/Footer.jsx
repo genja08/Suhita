@@ -12,7 +12,7 @@ const Footer = () => {
         <div>
           <div>Ikuti Kami</div>
             <div className='socialIcons'>
-              <a href="#"><img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" /></a>
+              <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product"><img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" /></a>
               <a href="#"><img src="/img/facebook.png" className="imageicon2" alt="Facebook" /></a>
               <a href="#"><img src="/img/instagram.png" className="imageicon3" alt="Instagram" /></a>
             </div>
