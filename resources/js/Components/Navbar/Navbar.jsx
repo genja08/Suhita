@@ -7,28 +7,20 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-
-    // Toggle scrolled state
     setScrolled(offset > 50);
+  };
 
-    // Define sections to check visibility
-    const sections = ['beranda', 'tentang', 'produk', 'kontak'];
-    
-    sections.forEach(section => {
-      const sectionElement = document.getElementById(section);
-      if (sectionElement) {
-        const sectionTop = sectionElement.offsetTop;
-        const sectionHeight = sectionElement.clientHeight;
-
-        if (offset >= sectionTop - sectionHeight / 2 && offset < sectionTop + sectionHeight / 2) {
-          setActiveLink(section); // Set active link
-        }
-      }
-    });
+  const updateActiveLink = () => {
+    const currentPath = window.location.pathname;
+    setActiveLink(currentPath); // Update the active link state with the current path
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    
+    // Call the function to detect the current active link
+    updateActiveLink();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -42,14 +34,13 @@ const Navbar = () => {
         className='logo'
       />
       <div className='nav'>
-        <a href="/" className={activeLink === '/beranda' ? 'active' : ''}>BERANDA</a>
-        <a href="/tentang" className={activeLink === 'tentang' ? 'active' : ''}>TENTANG KAMI</a>
-        <a href="/produk" className={activeLink === 'produk' ? 'active' : ''}>PRODUK</a>
-        <a href="/kontak" className={activeLink === 'kontak' ? 'active' : ''}>KONTAK</a>
+        <a href="/" className={activeLink === '/' ? 'active' : ''}>BERANDA</a>
+        <a href="/tentang" className={activeLink === '/tentang' ? 'active' : ''}>TENTANG KAMI</a>
+        <a href="/produk" className={activeLink === '/produk' ? 'active' : ''}>PRODUK</a>
+        <a href="/kontak" className={activeLink === '/kontak' ? 'active' : ''}>KONTAK</a>
       </div>
       <div className='searchBar'>
-        <input type="text" placeholder="Search ..." />
-        <i className="fas fa-search"></i>
+        {/* Search bar component if needed */}
       </div>
     </nav>
   );

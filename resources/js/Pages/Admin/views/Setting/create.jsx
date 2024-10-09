@@ -35,13 +35,14 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
-function Dashboard({ products = [] }) {  
+function Dashboard() {  
     const [formData, setFormData] = useState({
-      id_produk: "",
-      kualitas: "",
-      rasa: "",
-      ulasan: "",
-      rating: ""
+      youtube: "",
+      desc_tentang: "",
+      desc_beranda: "",
+      wa: "",
+      ig: "",
+      email: ""
     });
     const [file, setFile] = useState(null);
   
@@ -63,14 +64,14 @@ function Dashboard({ products = [] }) {
       }
       
       try {
-        const response = await axios.post("/admin/storereview", data, {
+        const response = await axios.post("/admin/storesetting", data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
         console.log(response.data);
         alert(response.data.message); 
-        window.location.href = '/admin/review';
+        window.location.href = '/admin/setting';
       } catch (error) {
         console.error("Error submitting form:", error);
         if (error.response && error.response.data.message) {
@@ -98,7 +99,7 @@ function Dashboard({ products = [] }) {
                     <CardHeader>
                       <Row>
                         <Col className="text-left" sm="6">
-                          <CardTitle tag="h2">Review</CardTitle>
+                          <CardTitle tag="h2">Setting</CardTitle>
                         </Col>
                       </Row>
                     </CardHeader>
@@ -106,81 +107,92 @@ function Dashboard({ products = [] }) {
                       <Row>
                         <Col lg="12">
                           <div className="container">
-                            <h2 className="text-white mt-4">Tambah Review</h2>
+                            <h2 className="text-white mt-4">Tambah Setting</h2>
                             <form onSubmit={handleSubmit}>
+
                               <div className="form-group">
-                                <label htmlFor="id_produk" className="text-white">Nama Produk</label>
-                                <select name="id_produk" id="id_produk" className="form-control" onChange={handleInputChange} value={formData.id_produk} required>
-                                    <option value="">Pilih</option>
-                                  {products.length > 0 ? (
-                                    products.map((product, index) => (
-                                      <option key={index} value={product.id}>{product.nama_produk}</option>
-                                    ))
-                                  ) : (
-                                    <option value="">No products available</option>
-                                  )}
-                                </select>
-                              </div>
-  
-                              <div className="form-group">
-                                <label htmlFor="kualitas" className="text-white">Kualitas</label>
+                                <label htmlFor="youtube" className="text-white">Link Youtube</label>
                                 <input
                                   type="text"
                                   className="form-control"
-                                  id="kualitas"
-                                  name="kualitas"
-                                  value={formData.kualitas}
+                                  id="youtube"
+                                  name="youtube"
+                                  value={formData.youtube}
                                   onChange={handleInputChange}
-                                  placeholder="Kualitas produk"
+                                  placeholder="Link Youtube"
+                                  required
+                                />
+                              </div>
+
+                              {/* <div className="form-group mt-3">
+                                <label htmlFor="desc_tentang" className="text-white">Deskripsi Tentang</label>
+                                <textarea
+                                  name="desc_tentang"
+                                  id="desc_tentang"
+                                  className="form-control"
+                                  value={formData.desc_tentang}
+                                  onChange={handleInputChange}
+                                  placeholder="desc_tentang"
+                                  required
+                                ></textarea>
+                              </div>
+                              
+                              <div className="form-group mt-3">
+                                <label htmlFor="desc_beranda" className="text-white">Deskripsi Beranda</label>
+                                <textarea
+                                  name="desc_beranda"
+                                  id="desc_beranda"
+                                  className="form-control"
+                                  value={formData.desc_beranda}
+                                  onChange={handleInputChange}
+                                  placeholder="desc_beranda"
+                                  required
+                                ></textarea>
+                              </div>
+                              
+                              <div className="form-group">
+                                <label htmlFor="wa" className="text-white">Nomor Whatsapp</label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="wa"
+                                  name="wa"
+                                  value={formData.wa}
+                                  onChange={handleInputChange}
+                                  placeholder="Nomor Whatsapp"
                                   required
                                 />
                               </div>
                               
                               <div className="form-group">
-                                <label htmlFor="rasa" className="text-white">Rasa</label>
+                                <label htmlFor="ig" className="text-white">Akun Instagram</label>
                                 <input
                                   type="text"
                                   className="form-control"
-                                  id="rasa"
-                                  name="rasa"
-                                  value={formData.rasa}
+                                  id="ig"
+                                  name="ig"
+                                  value={formData.ig}
                                   onChange={handleInputChange}
-                                  placeholder="Rasa produk"
+                                  placeholder="Akun Instagram"
                                   required
                                 />
                               </div>
-
-                              <div className="form-group mt-3">
-                                <label htmlFor="ulasan" className="text-white">Ulasan</label>
-                                <textarea
-                                  name="ulasan"
-                                  id="ulasan"
-                                  className="form-control"
-                                  value={formData.ulasan}
-                                  onChange={handleInputChange}
-                                  placeholder="Ulasan"
-                                  required
-                                ></textarea>
-                              </div>
-
+                              
                               <div className="form-group">
-                                <label htmlFor="rating" className="text-white">Rating</label>
-                                <br />
+                                <label htmlFor="email" className="text-white">Email</label>
                                 <input
-                                    type="range"
-                                    className="form-range"
-                                    id="rating"
-                                    name="rating"
-                                    min="0"
-                                    max="5"
-                                    step="1"
-                                    value={formData.rating}
-                                    onChange={handleInputChange}
-                                    placeholder="rating produk"
-                                    required
+                                  type="email"
+                                  className="form-control"
+                                  id="email"
+                                  name="email"
+                                  value={formData.email}
+                                  onChange={handleInputChange}
+                                  placeholder="Email"
+                                  required
                                 />
-                                <span className="text-white ml-2">Bintang: {formData.rating}</span>
-                              </div>
+                              </div> */}
+
+                              
 
   
                               

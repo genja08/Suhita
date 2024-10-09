@@ -1,9 +1,24 @@
 /* Main Content */
+.min-h-screen.white {
+    background-color: white; /* White background */
+    color: black; /* Text color for white theme */
+    margin-left: -20px;
+}
+
+.min-h-screen.black {
+    background-color: #121212; /* Dark background for dark mode */
+    color: white; /* White text for dark mode */
+    margin-left: -20px;
+    background-image: url('/img/Background2.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire background */
+}
+
+/* Main Content */
 .main-content {
     padding: 32px;
-    margin-top: 10px; /* Avoid overlap with the navbar */
-    overflow-y: auto; /* Allow scrolling for sections after content */
+    overflow-y: auto;
     font-size: 20px;
+    background: transparent;
 }
 
 /* Content */
@@ -18,30 +33,30 @@
     margin: 0 auto;
 }
 
-.content img {
-    max-width: 30%; /* Adjust the image size to 80% of the container */
-    height: auto;   /* Maintain aspect ratio */
-    display: block; /* Treat image as block element */
-    margin: 16px auto; /* Center the image */
-}
-
-/* Divider (Optional styling) */
+/* Divider */
 .divider {
     height: 1px;
     background-color: #ccc;
     margin: 16px 0;
 }
 
-.content p {
-    margin-bottom: 16px; /* Space between paragraphs */
-    line-height: 1.6; /* Adjust line height for readability */
-    text-align: justify; /* Align text for a cleaner look */
-    font-size: 20px;
+/* Dark mode divider */
+.min-h-screen.black .divider {
+    background-color: #444;
 }
 
+.content img {
+    max-width: 30%; /* Adjust the image size */
+    height: auto;   /* Maintain aspect ratio */
+    display: block; /* Treat image as block element */
+    margin: 16px auto; /* Center the image */
+}
 
-/* About Section */
-/* About Section 1 */
+/* Dark mode images */
+.min-h-screen.black img {
+    filter: brightness(1); /* Dim the image slightly for dark mode */
+}
+
 /* About Section */
 .about-section {
     display: flex;
@@ -53,7 +68,6 @@
     margin-right: 100px;
 }
 
-/* About Section 2 */
 .about-section2 {
     display: flex;
     flex-direction: row;
@@ -70,13 +84,13 @@
     width: 40%;
     border-radius: 10px;
     object-fit: cover;
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animasi transisi */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Hover Effects on Images */
 .about-image:hover, .about-image2:hover {
-    transform: scale(1.05) rotate(2deg); /* Zoom-in dan sedikit rotasi */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* About Text Styles */
@@ -85,6 +99,11 @@
     font-size: 20px;
     text-align: justify;
     line-height: 1.6;
+}
+
+/* Dark mode for text */
+.min-h-screen.black .about-text, .min-h-screen.black .about-text2 {
+    color: #ddd; /* Lighter text for readability */
 }
 
 /* Responsive Adjustments */
@@ -97,7 +116,7 @@
     }
 
     .about-image, .about-image2 {
-        width: 100%; /* Gambar memenuhi lebar layar */
+        width: 100%;
         margin-bottom: 20px;
     }
 
@@ -128,7 +147,6 @@
     }
 }
 
-
 /* Section Titles */
 .section-title {
     padding-top: 70px;
@@ -138,9 +156,6 @@
 }
 
 /* Bee Types Section */
-/* Bee Types Section */
-/* General Styles for Bee Types Section */
-/* General Styles for Bee Types Section */
 .bee-types {
     display: flex;
     flex-direction: column;
@@ -151,15 +166,14 @@
 /* Layout for Each Bee Type */
 .bee-types .bee-type {
     display: flex;
-    justify-content: flex-start; /* Default: Teks di sebelah kanan */
+    justify-content: flex-start;
     margin-bottom: 32px;
     align-items: center;
-    gap: 20px; /* Spasi antara gambar dan teks */
+    gap: 20px;
 }
 
-/* Reverse Layout for Odd Index Items */
 .bee-types .bee-type.reverse {
-    justify-content: flex-end; /* Gambar di sebelah kanan, teks di sebelah kiri */
+    justify-content: flex-end;
 }
 
 /* Image Styles with Dynamic Effects */
@@ -167,13 +181,12 @@
     width: 25%;
     border-radius: 10px;
     object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek animasi */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect on Image */
 .bee-image:hover {
-    transform: scale(1.05); /* Zoom-in effect */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Title and Description */
@@ -187,7 +200,12 @@
     text-align: justify;
 }
 
-/* Responsive Styles */
+/* Dark mode for bee text */
+.min-h-screen.black .bee-title, .min-h-screen.black .bee-description {
+    color: #ccc;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
     .bee-types {
         margin-left: 50px;
@@ -195,17 +213,17 @@
     }
 
     .bee-types .bee-type {
-        flex-direction: column; /* Tampilkan gambar dan teks vertikal */
-        align-items: center; /* Tengah pada layar kecil */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
     .bee-types .bee-type.reverse {
-        flex-direction: column-reverse; /* Teks di atas, gambar di bawah pada layout reverse */
+        flex-direction: column-reverse;
     }
 
     .bee-image {
-        width: 60%; /* Gambar lebih besar di layar menengah */
+        width: 60%;
         margin-bottom: 20px;
     }
 }
@@ -217,7 +235,7 @@
     }
 
     .bee-image {
-        width: 80%; /* Gambar lebih besar di layar kecil */
+        width: 80%;
     }
 
     .bee-title {
@@ -236,7 +254,7 @@
     }
 
     .bee-image {
-        width: 100%; /* Gambar full-width di layar sangat kecil */
+        width: 100%;
     }
 
     .bee-title {
@@ -247,11 +265,6 @@
         font-size: 16px;
     }
 }
-
-
-
-
-
 
 /* Video Section */
 .video-section {
@@ -267,77 +280,72 @@
     margin-bottom: 16px;
 }
 
-/* Video Container */
 .video-container {
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
 }
 
-/* Video Thumbnail */
 .video-thumbnail {
     width: 100%;
     max-width: 800px;
     border-radius: 10px;
 }
 
-/* Video Info */
 .video-info {
     display: flex;
-    justify-content: flex-end; /* Posisi di sebelah kanan */
+    justify-content: flex-end;
     margin-bottom: 16px;
     margin-right: 100px;
     margin-left: 100px;
-    transition: transform 0.3s ease; /* Transisi halus */
+    transition: transform 0.3s ease;
 }
 
-/* Reverse Class */
 .video-info.reverse {
-    justify-content: flex-start; /* Posisi di sebelah kiri */
+    justify-content: flex-start;
 }
 
-/* Video Image */
 .video-image {
     width: 40%;
     border-radius: 10px;
     margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for Video Image */
 .video-image:hover {
-    transform: scale(1.05); /* Zoom-in saat di-hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan saat di-hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Video Text */
 .video-text {
     width: 50%;
     margin-right: 30px;
     margin-left: 30px;
     text-align: justify;
-    transition: color 0.3s ease; /* Transisi warna halus */
+    transition: color 0.3s ease;
 }
 
-/* Title in Video Text */
 .video-text h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-
+/* Dark mode for video text */
+.min-h-screen.black .video-text {
+    color: #ccc;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .video-info {
-        flex-direction: column; /* Kolom vertikal pada layar kecil */
+        flex-direction: column;
         margin-right: 20px;
         margin-left: 20px;
     }
 
     .video-image {
-        width: 100%; /* Gambar memenuhi lebar layar */
+        width: 100%;
     }
 
     .video-text {
@@ -347,16 +355,10 @@
     }
 }
 
-
-
 /* Gallery Section */
 .gallery-section {
     padding: 10px;
     text-align: center;
-    /* background-image: url('/img/bggalerry.png');  */
-    background-size: cover; /* Memastikan background menutupi seluruh area */
-    background-position: center; /* Pusatkan gambar */
-    background-repeat: no-repeat; /* Tidak mengulang gambar */
 }
 
 .gallery-button {
@@ -368,104 +370,16 @@
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom */
-    grid-template-rows: auto; /* Menyesuaikan tinggi baris otomatis */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     gap: 16px;
     margin: 32px 0;
 }
 
 .gallery-image {
     width: 100%;
-    height: 200px; /* Atur tinggi yang sama untuk setiap gambar */
-    object-fit: cover; /* Pastikan gambar tetap dalam proporsi */
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.gallery-text {
-    font-size: 18px;
-    margin-top: 16px;
-}
-
-
-.decorative-icon {
-    margin-top: 16px;
-}
-
-/* Tentang.css */
-
-/* Main Content */
-.min-h-screen.white {
-    background-color: white; /* White background */
-    color: black; /* Text color for white theme */
-    margin-left: -20px;
-
-}
-
-.min-h-screen.black {
-    background-image: url('/img/Background2.png'); /* Path to your background image */
-    background-size: cover; /* Cover the entire background */
-    color: white; /* Text color for black theme */
-    margin-left: -20px;
-}
-
-/* Main Content */
-.main-content {
-    padding: 32px;
-    margin-top: 10px; /* Avoid overlap with the navbar */
-    overflow-y: auto; /* Allow scrolling for sections after content */
-}
-
-/* Content */
-.content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; /* Center align images and text */
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* ... (rest of your CSS remains unchanged) */
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: absolute; /* Use absolute positioning */
-    top: 20px; /* Distance from the top */
-    right: 20px; /* Distance from the right */
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    background-color: lightgray;
-    transition: background-color 0.3s;
-    z-index: 1000; /* Ensure it appears above other elements */
-    margin-top: 75px;
-    border-radius: 20px;
-}
-
-.theme-toggle:hover {
-    background-color: gray;
-}
-
-.image-white {
-    max-width: 30%; /* Adjust as necessary */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Treat image as block element */
-    margin: 16px auto; /* Center the image */
-}
-
-/* Styles for images in black theme */
-.image-black {
-    max-width: 30%; /* Same size as the white theme */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Treat image as block element */
-    margin: 16px auto; /* Center the image */
-    filter: brightness(0.8); /* Dim the images for better contrast against dark background */
-    /* You can also add more styles like opacity or adjustments based on your design */
-}
-
-/* Ensure text is readable on the black theme */
-.min-h-screen.black p {
-    color: white; /* Ensure text color contrasts with the background */
-}

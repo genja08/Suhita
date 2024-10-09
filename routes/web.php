@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     ProdukController,
     AboutController,
     ReviewController,
-    GalleryController
+    GalleryController,
+    SettingController
 };
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/tambahgallery', [GalleryController::class, 'create'])->name('creategallery');
         Route::post('/storegallery', [GalleryController::class, 'store'])->name('gallery.store');
         Route::delete('/deletegallery/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+    });
+
+    //ADMIN SETTING
+    Route::prefix('admin')->group(function () {
+        Route::get('/setting', [SettingController::class, 'index'])->name('setting');
+        Route::get('/tambahsetting', [SettingController::class, 'create'])->name('createsetting');
+        Route::post('/storesetting', [SettingController::class, 'store'])->name('setting.store');
+        Route::post('/updatesetting/{id}', [SettingController::class, 'update'])->name('setting.update');
+        Route::delete('/deletesetting/{id}', [SettingController::class, 'destroy'])->name('setting.destroy');
     });
 });
 

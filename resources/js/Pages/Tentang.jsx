@@ -3,30 +3,49 @@ import { Head } from '@inertiajs/react';
 import './Tentang.css';
 import Navbar from '@/Components/Navbar/Navbar';
 import Footer from '@/Components/Footer/Footer';
+import { DarkModeSwitch } from 'react-toggle-dark-mode'; // Import the switch
 
-export default function Tentang({ abouts, galleries }) {
-    const [theme, setTheme] = useState('white'); // State to manage theme
+export default function Tentang({ abouts, galleries, youtube }) {
+    // const [theme, setTheme] = useState('white'); // State to manage theme
 
-    const toggleTheme = () => {
-        setTheme((prev) => (prev === 'white' ? 'black' : 'white'));
+    // const toggleTheme = () => {
+    //     setTheme((prev) => (prev === 'white' ? 'black' : 'white'));
+    // };
+
+    // const getImageSrc = (image) => {
+    //     if (theme === 'black') {
+    //         return `/img/${image}-black.png`; // Path for black theme images
+    //     }
+    //     return `/img/${image}-white.png`; // Path for white theme images
+    // };
+
+    const [isDarkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = (checked) => {
+        setDarkMode(checked);
     };
 
     const getImageSrc = (image) => {
-        if (theme === 'black') {
-            return `/img/${image}-black.png`; // Path for black theme images
-        }
-        return `/img/${image}-white.png`; // Path for white theme images
+        return isDarkMode
+            ? `/img/${image}-black.png`
+            : `/img/${image}-white.png`;
     };
 
     return (
         <>
-            <Head title="Tentang Kami" />
-            <div className={`min-h-screen flex flex-col ${theme}`}> {/* Apply theme class */}
+            <Head title="Tentang Kami">
+                {/* Add favicon link here */}
+                <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+            </Head>
+            <div className={`min-h-screen flex flex-col ${isDarkMode ? 'black' : 'white'}`}>
                 <Navbar />
                 <div className="main-content">
-                    <button onClick={toggleTheme} className="theme-toggle">
-                        Tema {theme === 'white' ? 'Black' : 'White'}
-                    </button>
+                    <DarkModeSwitch
+                        style={{ marginTop: '5rem' }}
+                        checked={isDarkMode}
+                        onChange={toggleDarkMode}
+                        size={50}
+                    />
                     <div className="content">
                         <img src={getImageSrc('super3')} alt="" />
                         <p>
@@ -99,7 +118,7 @@ export default function Tentang({ abouts, galleries }) {
                     <div className="video-section">
                         <h1 className="video-title">VIDEO</h1>
                         <div className="video-container">
-                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/0mRk23MY_1c" title="CARA BUDIDAYA LEBAH MADU DI SUHITA BEE FARM  - LAMPUNG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="1280" height="720" src={`https://www.youtube.com/embed/${youtube}`} title="CARA BUDIDAYA LEBAH MADU DI SUHITA BEE FARM  - LAMPUNG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
 
                         <div className="video-info">

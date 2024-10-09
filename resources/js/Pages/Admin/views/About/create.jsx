@@ -39,6 +39,9 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
+import { Head } from '@inertiajs/react';
+
+
 function Dashboard(props) {
     const [formData, setFormData] = useState({
       judul: "",
@@ -87,6 +90,10 @@ function Dashboard(props) {
   
     return (
       <>
+      <Head title="Produk">
+        {/* Add favicon link here */}
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    </Head>
         <AdminNavbar />
         <div className="d-flex">
           <Sidebar />

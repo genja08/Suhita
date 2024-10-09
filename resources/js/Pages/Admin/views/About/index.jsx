@@ -16,6 +16,9 @@ import {
   Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 
+import { Head } from '@inertiajs/react';
+
+
 function IndexAbout({ abouts }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [editFormData, setEditFormData] = useState({
@@ -68,6 +71,10 @@ function IndexAbout({ abouts }) {
 
   return (
     <>
+    <Head title="Produk">
+        {/* Add favicon link here */}
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    </Head>
       <AdminNavbar />
       <div className="d-flex">
         <Sidebar />

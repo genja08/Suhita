@@ -6,6 +6,8 @@ import Footer from '@/Components/Footer/Footer';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { DarkModeSwitch } from 'react-toggle-dark-mode'; // Import the switch
+
 
 
 // ... (products and reviews arrays)
@@ -29,22 +31,34 @@ const ReviewCard = ({ gambar_produk, kualitas, rasa, ulasan, rating }) => (
 );
 
 export default function Produk({products, reviews}) {
-    const [theme, setTheme] = useState('white'); // Default theme is white
+    const [isDarkMode, setDarkMode] = useState(false);
 
-    const toggleTheme = () => {
-        setTheme((prev) => (prev === 'white' ? 'black' : 'white'));
+    const toggleDarkMode = (checked) => {
+        setDarkMode(checked);
+    };
+
+    const getImageSrc = (image) => {
+        return isDarkMode
+            ? `/img/${image}-black.png`
+            : `/img/${image}-white.png`;
     };
 
     return (
         <>
-            <Head title="Produk" />
-            <div className={`min-h-screen flex flex-col ${theme}`}>
+            <Head title="Produk">
+                {/* Add favicon link here */}
+                <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+            </Head>
+            <div className={`min-h-screen flex flex-col ${isDarkMode ? 'black' : 'white'}`}>
                 <Navbar />
                 <div className="app">
-                    <main className="main">
-                        <button onClick={toggleTheme} className="theme-toggle">
-                            Tema {theme === 'white' ? 'Black' : 'White'}
-                        </button>
+                    <main className="main-content">
+                    <DarkModeSwitch
+                        style={{ marginTop: '5rem' }}
+                        checked={isDarkMode}
+                        onChange={toggleDarkMode}
+                        size={50}
+                    />
 
                         <section className="intro">
                             <div className="intro-image-wrapper">
@@ -70,8 +84,10 @@ export default function Produk({products, reviews}) {
                                             <button
                                                 className="buy-button"
                                                 onClick={() => {
-                                                    window.open('https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product', '_blank');
-                                                }}
+                                                    const productName = product.nama_produk.replace(/ /g, " "); // Replace spaces in product name
+                                                    const message = `I am interested in your product: ${productName}`; // Custom message with spaces
+                                                    window.open(`https://wa.me/6282279255702?text=${encodeURIComponent(message)}`, '_blank');
+                                                  }}
                                                 >
                                                 Buy Now
                                             </button>

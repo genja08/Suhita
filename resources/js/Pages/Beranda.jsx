@@ -7,7 +7,10 @@ import Footer from '@/Components/Footer/Footer';
 export default function Beranda() {
   return (
     <>
-      <Head title="Beranda" />
+      <Head title="Beranda">
+                {/* Add favicon link here */}
+                <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+            </Head>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow flex flex-col items-center justify-center beranda">

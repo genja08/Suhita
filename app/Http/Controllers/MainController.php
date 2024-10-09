@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\Products;
 use App\Models\Review;
 use App\Models\Gallery;
+use App\Models\Setting;
 use App\Models\About;
 
 use Illuminate\Support\Facades\Storage;
@@ -23,10 +24,17 @@ class MainController extends Controller
     public function tentang(){
         $abouts = About::all();
         $galleries = Gallery::all();
+        $setting = Setting::first();
+
+        $str = $setting->youtube;
+        $arr = explode("=",$str);
+
+        // dd($setting->youtube);
 
         return Inertia::render('Tentang', [
             'abouts' => $abouts,
-            'galleries' => $galleries
+            'galleries' => $galleries,
+            'youtube' => $arr[1]
         ]);
     }
     

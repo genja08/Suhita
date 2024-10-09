@@ -7,7 +7,10 @@ import Footer from '@/Components/Footer/Footer';
 export default function Kontak() {
   return (
     <>
-      <Head title="Kontak" />
+      <Head title="Kontak">
+                {/* Add favicon link here */}
+                <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+            </Head>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="kontak">

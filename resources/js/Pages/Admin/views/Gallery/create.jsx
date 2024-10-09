@@ -20,6 +20,9 @@ import { Container, Row, Col  } from 'react-bootstrap';
 import '../dashboardadmin.css';
 import axios from '../axiosConfig.js';
 
+import { Head } from '@inertiajs/react';
+
+
 import {
   Button,
   ButtonGroup,
@@ -90,6 +93,10 @@ function Dashboard(props) {
   
     return (
       <>
+      <Head title="Produk">
+        {/* Add favicon link here */}
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    </Head>
         <AdminNavbar />
         <div className="d-flex">
           <Sidebar />

@@ -21,8 +21,8 @@
 }
 
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9); /* Navbar lebih transparan saat scroll */
-    background-image: none; /* Menghapus gambar saat scroll jika diinginkan */
+    background-color: rgba(0, 0, 0, 0.9);
+    background-image: none;
 }
 
 .logo {
@@ -51,7 +51,7 @@
 }
 
 .searchBar {
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 20px;
     padding: 5px 10px;
     display: flex;
@@ -76,6 +76,6 @@
 }
 
 .nav a.active {
-    color: #ffcc00; /* Change to your desired active color */
-    font-weight: bold; /* Make it bold or any style you prefer */
+    color: #ffcc00;
+    font-weight: bold;
 }

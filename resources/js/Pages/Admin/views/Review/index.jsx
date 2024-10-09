@@ -16,6 +16,9 @@ import {
   Modal, ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 
+import { Head } from '@inertiajs/react';
+
+
 
 
 function IndexReview({ reviews, products }) {
@@ -82,6 +85,10 @@ function IndexReview({ reviews, products }) {
 
   return (
     <>
+    <Head title="Produk">
+        {/* Add favicon link here */}
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    </Head>
       <AdminNavbar />
       <div className="d-flex">
         <Sidebar />

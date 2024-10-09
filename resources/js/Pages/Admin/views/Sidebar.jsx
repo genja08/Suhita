@@ -9,11 +9,7 @@ function Sidebar() {
     <div className="bg-dark vh-100" style={{ width: '250px', position: 'fixed' }}>
       <Nav className="flex-column p-3">
 
-        <Nav.Item>
-          <Nav.Link href="/dashboard" className="text-white menu-item">
-            Dashboard <MdDashboard className="menu-item-icon" />
-          </Nav.Link>
-        </Nav.Item>
+        
 
         <Nav.Item>
           <Nav.Link href="/admin/produk" className="text-white menu-item">
@@ -36,6 +32,12 @@ function Sidebar() {
         <Nav.Item>
           <Nav.Link href="/admin/gallery" className="text-white menu-item">
             Gallery <MdInsertPhoto  className="menu-item-icon" />
+          </Nav.Link>
+        </Nav.Item>
+
+        <Nav.Item>
+          <Nav.Link href="/admin/setting" className="text-white menu-item">
+            Setting <MdDashboard className="menu-item-icon" />
           </Nav.Link>
         </Nav.Item>
 
