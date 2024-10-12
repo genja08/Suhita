@@ -23,12 +23,12 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4,
-} from "../variables/charts.jsx";
+// import {
+//   chartExample1,
+//   chartExample2,
+//   chartExample3,
+//   chartExample4,
+// } from "../variables/charts.jsx";
 
 export default function Dashboardadmin() {
     return (
@@ -104,12 +104,12 @@ export default function Dashboardadmin() {
                 </Row>
               </CardHeader>
               <CardBody>
-                <div className="chart-area">
+                {/* <div className="chart-area">
                   <Line
                     data={chartExample1[bigChartData]}
                     options={chartExample1.options}
                   />
-                </div>
+                </div> */}
               </CardBody>
             </Card>
           </Col>
@@ -124,12 +124,12 @@ export default function Dashboardadmin() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                <div className="chart-area">
+                {/* <div className="chart-area">
                   <Line
                     data={chartExample2.data}
                     options={chartExample2.options}
                   />
-                </div>
+                </div> */}
               </CardBody>
             </Card>
           </Col>
@@ -143,12 +143,12 @@ export default function Dashboardadmin() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                <div className="chart-area">
+                {/* <div className="chart-area">
                   <Bar
                     data={chartExample3.data}
                     options={chartExample3.options}
                   />
-                </div>
+                </div> */}
               </CardBody>
             </Card>
           </Col>
@@ -161,12 +161,12 @@ export default function Dashboardadmin() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                <div className="chart-area">
+                {/* <div className="chart-area">
                   <Line
                     data={chartExample4.data}
                     options={chartExample4.options}
                   />
-                </div>
+                </div> */}
               </CardBody>
             </Card>
           </Col>
