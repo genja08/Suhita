@@ -103,7 +103,7 @@ function IndexAbout({ abouts }) {
                                   <td>{about.judul}</td>
                                   <td>{about.deskripsi}</td>
                                   <td>
-                                    <img src={`http://127.0.0.1:8000${about.gambar}`} alt={about.gambar} width="100" height="100" />
+                                    <img src={`https://suhita.id${about.gambar}`} alt={about.gambar} width="100" height="100" />
                                   </td>
                                   <td>
                                     <button className="btn btn-sm btn-primary" onClick={() => openEditModal(about)}>Edit</button>
@@ -138,7 +138,7 @@ function IndexAbout({ abouts }) {
                                   <td>{about.judul}</td>
                                   <td>{about.deskripsi}</td>
                                   <td>
-                                    <img src={`http://127.0.0.1:8000${about.gambar}`} alt={about.gambar} width="100" height="100" />
+                                    <img src={`https://suhita.id${about.gambar}`} alt={about.gambar} width="100" height="100" />
                                   </td>
                                   <td>
                                     <button className="btn btn-sm btn-primary" onClick={() => openEditModal(about)}>Edit</button>

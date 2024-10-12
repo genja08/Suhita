@@ -68,7 +68,7 @@ function IndexGallery({ galleries }) {
                                     <tr key={gallery.id}>
                                       <td>{index + 1}</td>
                                       <td>
-                                          <img src={`http://127.0.0.1:8000${gallery.gambar}`} alt={gallery.gambar} width="100" height="100" /> 
+                                          <img src={`https://suhita.id${gallery.gambar}`} alt={gallery.gambar} width="100" height="100" /> 
                                       </td>
                                       <td>
                                           <button className="btn btn-sm btn-danger" onClick={() => handleDelete(gallery.id)}>Delete</button>
@@ -98,7 +98,7 @@ function IndexGallery({ galleries }) {
                                     <tr key={gallery.id}>
                                     <th scope="row" className="text-white">{index + 1}</th>
                                     <td>
-                                        <img src={`http://127.0.0.1:8000${gallery.gambar}`} alt={gallery.gambar} width="100" height="100" /> 
+                                        <img src={`https://suhita.id${gallery.gambar}`} alt={gallery.gambar} width="100" height="100" /> 
                                     </td>
                                     <td>
                                         <button className="btn btn-sm btn-danger" onClick={() => handleDelete(gallery.id)}>Delete</button>

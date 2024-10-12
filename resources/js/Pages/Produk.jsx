@@ -15,7 +15,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode'; // Import the switch
 const ReviewCard = ({ gambar_produk, kualitas, rasa, ulasan, rating }) => (
     <div className="review-card">
         <div className="review-image-container">
-            <img src={`http://127.0.0.1:8000${gambar_produk}`} alt="Product image" className="review-image" />
+            <img src={`https://suhita.id${gambar_produk}`} alt="Product image" className="review-image" />
         </div>
         <div className="review-details">
             <p className="review-quality"><strong>Kualitas:</strong> {kualitas}</p>
@@ -75,7 +75,7 @@ export default function Produk({products, reviews}) {
                             <div className="products-grid">
                                 {products.map((product) => (
                                     <div key={product.id} className="product-card">
-                                        <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.nama_produk} className="product-image" />
+                                        <img src={`https://suhita.id${product.gambar_produk}`} alt={product.nama_produk} className="product-image" />
                                         <div className="product-info">
                                             <div className="product-details">
                                                 <p className="product-name">{product.nama_produk}</p>

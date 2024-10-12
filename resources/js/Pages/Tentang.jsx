@@ -95,7 +95,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                             <div key={index} className={`bee-type ${index % 2 === 1 ? 'reverse' : ''}`}>
                             {index % 2 === 0 && (
                                 <img
-                                src={`http://127.0.0.1:8000${item.gambar}`}
+                                src={`https://suhita.id${item.gambar}`}
                                 alt={item.judul}
                                 className="bee-image"
                                 />
@@ -106,7 +106,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                             </div>
                             {index % 2 === 1 && (
                                 <img
-                                src={`http://127.0.0.1:8000${item.gambar}`}
+                                src={`https://suhita.id${item.gambar}`}
                                 alt={item.judul}
                                 className="bee-image"
                                 />
@@ -156,7 +156,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                             {galleries.map((gallery, index) => (
                                 <img
                                     key={index}
-                                    src={`http://127.0.0.1:8000${gallery.gambar}`}
+                                    src={`https://suhita.id${gallery.gambar}`}
                                     alt={`Image ${index + 1}`}
                                     className="gallery-image"
                                 />

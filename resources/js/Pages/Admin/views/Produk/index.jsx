@@ -110,7 +110,7 @@ function IndexProduk({ products }) {
                                   <td>{product.nama_produk}</td>
                                   <td>{product.harga}</td>
                                   <td>
-                                    <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
+                                    <img src={`https://suhita.id${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
                                   </td>
                                   <td>{product.deskripsi}</td>
                                   <td>
@@ -155,7 +155,7 @@ function IndexProduk({ products }) {
                                   <td>{product.nama_produk}</td>
                                   <td>{product.harga}</td>
                                   <td>
-                                    <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
+                                    <img src={`https://suhita.id${product.gambar_produk}`} alt={product.gambar_produk} width="100" height="100" />
                                   </td>
                                   <td>{product.deskripsi}</td>
                                   <td>
