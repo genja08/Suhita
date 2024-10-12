@@ -76,7 +76,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
 
                     <section className='about-section2'>
                     <img
-                            src="/img/AllProduk.png"
+                            src="/img/allProduk.png"
                             alt="Various Suhita products"
                             className="about-image2"
                         />
