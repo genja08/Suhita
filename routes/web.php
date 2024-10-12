@@ -12,6 +12,19 @@ use App\Http\Controllers\{
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return "Cache cleared!";
+});
+
+Route::get('/clear-view', function() {
+    Artisan::call('view:clear');
+    return "Cache cleared!";
+});
+
+
 
 // Dashboard Route
 Route::get('/dashboard', function () {
