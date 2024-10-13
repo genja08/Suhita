@@ -1,11 +1,8 @@
 .navbar {
     background-color: #100806;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Flex for spacing between logo and nav */
     align-items: center;
     position: fixed;
     width: 100%;
@@ -13,93 +10,74 @@
     left: 0;
     transition: background-color 0.3s ease;
     z-index: 1000;
-}
-
-.navbar.scrolled {
+  }
+  
+  .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.9);
-    background-image: none;
-}
-
-.logo {
+  }
+  
+  .logo {
     height: 50px;
     transition: transform 0.3s ease;
-}
-
-.logo:hover {
+  }
+  
+  .logo:hover {
     transform: scale(1.1);
-}
-
-.nav {
+  }
+  
+  .nav {
     display: flex;
     gap: 20px;
-}
-
-.nav a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center the nav links */
+  }
+  
+  .nav a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-}
-
-.nav a:hover {
+  }
+  
+  .nav a:hover {
     color: #ffcc00;
-}
-
-.searchBar {
-    border-radius: 20px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-.searchBar input {
-    border: none;
-    outline: none;
-    padding: 5px;
-}
-
-.searchBar input:focus {
-    border: 0px solid #000; 
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.searchBar i {
-    color: #000;
-}
-
-.nav a.active {
+  }
+  
+  .nav a.active {
     color: #ffcc00;
     font-weight: bold;
-}
-
-/* Media Queries untuk tampilan mobile */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
+  }
+  
+  .hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  /* Mobile view adjustments */
+  @media (max-width: 768px) {
     .nav {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        margin-top: 10px;
+      display: none; /* Hide nav links */
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      position: static;
+      transform: none; /* Remove centering for mobile */
     }
-
-    .nav a {
-        font-size: 14px;
+  
+    .nav.open {
+      display: flex; /* Show nav links when open */
     }
-
-    .searchBar {
-        width: 100%;
-        margin-top: 10px;
-        justify-content: space-between;
+  
+    .navbar {
+      justify-content: space-between; /* Adjust layout for mobile */
     }
-
-    .logo {
-        height: 40px;
+  
+    .hamburger {
+      display: block; /* Show hamburger on mobile */
     }
-}
+  }
+  
