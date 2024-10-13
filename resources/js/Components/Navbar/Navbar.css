@@ -1,15 +1,18 @@
+/* Navbar.css */
 .navbar {
     background-color: #100806;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px;
+    padding: 10px 20px; /* Reduced padding */
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     transition: background-color 0.3s ease;
     z-index: 1000;
+    height: 70px; /* Set a fixed height */
+    box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .navbar-content {
@@ -17,7 +20,8 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    /* margin: 0 auto; */
+    margin: 0 auto;
+    height: 100%; /* Ensure full height of navbar */
 }
 
 .navbar.scrolled {
@@ -26,7 +30,7 @@
 }
 
 .logo {
-    height: 50px;
+    height: 40px; /* Slightly reduced size */
     transition: transform 0.3s ease;
 }
 
@@ -113,7 +117,8 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 10px;
+        padding: 5px 10px; /* Further reduced padding for mobile */
+        height: 60px; /* Smaller height for mobile */
     }
 
     .navbar-content {
@@ -130,22 +135,29 @@
     }
 
     .searchBar {
-        width: 100%;
-        margin-top: 10px;
+        display: none; /* Hide search bar on mobile if not needed */
     }
 
     .logo {
-        height: 40px;
+        height: 30px; /* Even smaller logo for mobile */
     }
 }
 
-Adjust main content to prevent overlap with navbar
+/* Remove body padding and add it to main content */
 body {
-    padding-top: 90px; /* Adjust this value based on your navbar height */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for main content - add this to your global CSS or App component styles */
+#root > div:not(.navbar), /* Adjust this selector based on your app structure */
+.main-content {
+    padding-top: 70px; /* Should match navbar height */
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 70px; /* Adjust for mobile */
+    #root > div:not(.navbar),
+    .main-content {
+        padding-top: 60px; /* Match mobile navbar height */
     }
 }
