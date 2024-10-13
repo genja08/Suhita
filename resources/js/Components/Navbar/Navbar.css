@@ -139,7 +139,7 @@
     }
 }
 
-/* Adjust main content to prevent overlap with navbar */
+Adjust main content to prevent overlap with navbar
 body {
     padding-top: 90px; /* Adjust this value based on your navbar height */
 }
