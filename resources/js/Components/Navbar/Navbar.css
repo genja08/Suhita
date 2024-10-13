@@ -34,20 +34,24 @@
     transform: scale(1.1);
 }
 
-.nav {
+.nav-desktop {
     display: flex;
     gap: 20px;
 }
 
-.nav a {
+.nav-desktop a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.nav a:hover, .nav a.active {
+.nav-desktop a:hover, .nav-desktop a.active {
     color: #ffcc00;
+}
+
+.nav-mobile {
+    display: none;
 }
 
 .searchBar {
@@ -58,23 +62,53 @@
     transition: background-color 0.3s ease;
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    background: transparent;
+.dropdown-toggle {
+    background-color: transparent;
     border: none;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
-    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
-.menu-toggle span {
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    transition: all 0.3s linear;
+.arrow {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.arrow.down {
+    transform: rotate(45deg);
+}
+
+.arrow.up {
+    transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #100806;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #1a1a1a;
 }
 
 @media (max-width: 768px) {
@@ -86,24 +120,13 @@
         flex-wrap: wrap;
     }
 
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav {
-        flex-direction: column;
-        width: 100%;
+    .nav-desktop {
         display: none;
-        padding-top: 20px;
     }
 
-    .nav.show {
-        display: flex;
-    }
-
-    .nav a {
-        padding: 10px 0;
-        font-size: 16px;
+    .nav-mobile {
+        display: block;
+        position: relative;
     }
 
     .searchBar {
@@ -113,22 +136,6 @@
 
     .logo {
         height: 40px;
-    }
-
-    .menu-open {
-        height: auto;
-    }
-
-    .menu-open .menu-toggle span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-open .menu-toggle span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-open .menu-toggle span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
     }
 }
 
