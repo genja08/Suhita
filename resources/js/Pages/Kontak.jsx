@@ -8,17 +8,17 @@ export default function Kontak() {
   return (
     <>
       <Head title="Kontak">
-                {/* Add favicon link here */}
-                <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
-            </Head>
+        <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+      </Head>
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="kontak">
           <h1>Hubungi Kami</h1>
+          <h1>Hubungi Kami</h1>
           <p>
             Untuk pertanyaan umum, pengembalian pesanan, umpan balik & pertanyaan data
             pribadi, jangan ragu untuk menghubungi kami dengan menulis email atau
-            menelepon kami pada rincian yang diberikan dibawah.
+            menelepon kami pada rincian yang diberikan di bawah.
           </p>
           <div className="contact-info">
             <div className="contact-item">

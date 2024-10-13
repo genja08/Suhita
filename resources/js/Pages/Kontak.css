@@ -1,13 +1,19 @@
+/* Ensure the whole page takes up the full height */
+.min-h-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
 .kontak {
   text-align: center;
-  padding: 80px 5px; /* Reduced padding */
+  padding: 40px 20px; 
   background-image: url('/img/Background.png'); 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  margin-top: 80px;
-  margin-left: -20px;
-  height: 700px;
+  flex: 1; /* Allow the kontak section to take up remaining space */
+  margin-left: -10px;
 }
 
 .kontak h1 {
@@ -16,49 +22,61 @@
   color: #fff;
 }
 
-
 .kontak p {
   font-size: 18px;
   line-height: 1.6;
-  text-align: justify; /* Justify the text */
+  text-align: justify;
   margin: 0 auto;
-  max-width: 600px; 
+  max-width: 600px;
   color: #fff;
-  overflow: hidden; /* Ensure no overflow */
-  display: -webkit-box; /* For multiline truncation */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3; /* Limit to 3 lines */
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items */
-  gap: 10px;
-  color: #fff;
-  margin-top: 10px;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .contact-item {
   display: flex;
-  justify-content: left; /* Center horizontally */
-  align-items: center; /* Align items vertically */
-  gap: 8px; /* Space between icon and text */
-  width: 100%; /* Take full width */
-  max-width: 600px; /* Limit width */
-  padding: 0 20px; /* Add padding for space */
-  
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .contact-item a {
-  display: flex; /* Flex container for link */
-  align-items: center; /* Align icon and text */
-  color: #fff; /* Set text color */
-  text-decoration: none; /* Remove underline */
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .contact-item img {
-  width: 24px; /* Adjust icon size */
-  height: auto; /* Keep proportions */
-  margin-right: 20px;
+  width: 24px;
+  height: auto;
+}
+
+/* Footer at the bottom */
+footer {
+  background-color: #000; /* Or any desired footer color */
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .kontak p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .contact-item a {
+    font-size: 16px;
+  }
 }

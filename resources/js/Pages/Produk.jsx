@@ -60,7 +60,7 @@ export default function Produk({products, reviews}) {
                         size={50}
                     />
 
-                        <section className="intro">
+                        {/* <section className="intro">
                             <div className="intro-image-wrapper">
                                 <div className="intro-bg"></div>
                                 <img src="/img/orang.png" alt="Person holding honeycomb" className="intro-image" />
@@ -68,6 +68,17 @@ export default function Produk({products, reviews}) {
                             <div className="intro-text">
                                 <p>Madu suhita berusaha dan tetap konsisten membangun dan mempertahankan kemurnian madu yang berasal dari nektar alami, Menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu yang kalian nikmati berasal dari sumber yang bertanggung jawab terhadap lingkungan.</p>
                             </div>
+                        </section> */}
+
+                        <section className="about-section">
+                            <img
+                                src="/img/orang.png"
+                                alt="Various Suhita products"
+                                className="about-image"
+                            />
+                            <p className="about-text">
+                                Madu suhita berusaha dan tetap konsisten membangun dan mempertahankan kemurnian madu yang berasal dari nektar alami, Menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu yang kalian nikmati berasal dari sumber yang bertanggung jawab terhadap lingkungan.
+                            </p>
                         </section>
 
                         <section className="products-section">
