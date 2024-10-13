@@ -4,15 +4,20 @@
     background-position: center;
     background-repeat: no-repeat;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     transition: background-color 0.3s ease;
     z-index: 1000;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .navbar.scrolled {
@@ -41,7 +46,7 @@
     transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.nav a:hover, .nav a.active {
     color: #ffcc00;
 }
 
@@ -53,53 +58,87 @@
     transition: background-color 0.3s ease;
 }
 
-.searchBar input {
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
     border: none;
-    outline: none;
-    padding: 5px;
+    cursor: pointer;
+    padding: 0;
 }
 
-.searchBar input:focus {
-    border: 0px solid #000; 
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s linear;
 }
 
-.searchBar i {
-    color: #000;
-}
-
-.nav a.active {
-    color: #ffcc00;
-    font-weight: bold;
-}
-
-/* Media Queries untuk tampilan mobile */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
         padding: 10px;
+    }
+
+    .navbar-content {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
     }
 
     .nav {
         flex-direction: column;
         width: 100%;
-        gap: 10px;
-        margin-top: 10px;
+        display: none;
+        padding-top: 20px;
+    }
+
+    .nav.show {
+        display: flex;
     }
 
     .nav a {
-        font-size: 14px;
+        padding: 10px 0;
+        font-size: 16px;
     }
 
     .searchBar {
         width: 100%;
         margin-top: 10px;
-        justify-content: space-between;
     }
 
     .logo {
         height: 40px;
+    }
+
+    .menu-open {
+        height: auto;
+    }
+
+    .menu-open .menu-toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-open .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-open .menu-toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Adjust main content to prevent overlap with navbar */
+body {
+    padding-top: 90px; /* Adjust this value based on your navbar height */
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Adjust for mobile */
     }
 }
