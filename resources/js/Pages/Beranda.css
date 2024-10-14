@@ -84,3 +84,330 @@
     opacity: 1; /* Akhir tidak transparan */
   }
 }
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.about-section2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 32px;
+}
+
+/* About Image Styles with Dynamic Effects */
+.about-image, .about-image2 {
+  width: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effects on Images */
+.about-image:hover, .about-image2:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* About Text Styles */
+.about-text, .about-text2 {
+  width: 50%;
+  font-size: 20px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Dark mode for text */
+.min-h-screen.black .about-text, .min-h-screen.black .about-text2 {
+  color: #ddd; /* Lighter text for readability */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .about-section, .about-section2 {
+      flex-direction: column;
+      text-align: center;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .about-image, .about-image2 {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .about-text, .about-text2 {
+      width: 100%;
+      padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section, .about-section2 {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .about-text, .about-text2 {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text, .about-text2 {
+      font-size: 16px;
+  }
+
+  .about-image, .about-image2 {
+      width: 100%;
+  }
+}
+
+/* Section Titles */
+.section-title {
+  padding-top: 70px;
+  text-align: center;
+  font-size: 32px;
+  margin: 32px 0;
+}
+
+/* Bee Types Section */
+.bee-types {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Layout for Each Bee Type */
+.bee-types .bee-type {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+  align-items: center;
+  gap: 20px;
+}
+
+.bee-types .bee-type.reverse {
+  justify-content: flex-end;
+}
+
+/* Image Styles with Dynamic Effects */
+.bee-image {
+  width: 25%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bee-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Title and Description */
+.bee-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.bee-description {
+  font-size: 20px;
+  text-align: justify;
+}
+
+/* Dark mode for bee text */
+.min-h-screen.black .bee-title, .min-h-screen.black .bee-description {
+  color: #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .bee-types {
+      margin-left: 50px;
+      margin-right: 50px;
+  }
+
+  .bee-types .bee-type {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .bee-types .bee-type.reverse {
+      flex-direction: column-reverse;
+  }
+
+  .bee-image {
+      width: 60%;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bee-types {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .bee-image {
+      width: 80%;
+  }
+
+  .bee-title {
+      font-size: 22px;
+  }
+
+  .bee-description {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bee-types {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .bee-image {
+      width: 100%;
+  }
+
+  .bee-title {
+      font-size: 20px;
+  }
+
+  .bee-description {
+      font-size: 16px;
+  }
+}
+
+/* Video Section */
+.video-section {
+  padding: 32px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+/* Title Style */
+.video-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.video-info {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  margin-right: 100px;
+  margin-left: 100px;
+  transition: transform 0.3s ease;
+}
+
+.video-info.reverse {
+  justify-content: flex-start;
+}
+
+.video-image {
+  width: 40%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-text {
+  width: 50%;
+  margin-right: 30px;
+  margin-left: 30px;
+  text-align: justify;
+  transition: color 0.3s ease;
+}
+
+.video-text h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Dark mode for video text */
+.min-h-screen.black .video-text {
+  color: #ccc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .video-info {
+      flex-direction: column;
+      margin-right: 20px;
+      margin-left: 20px;
+  }
+
+  .video-image {
+      width: 100%;
+  }
+
+  .video-text {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+  }
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 10px;
+  text-align: center;
+}
+
+.gallery-button {
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+

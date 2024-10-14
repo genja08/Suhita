@@ -26,15 +26,15 @@ class MainController extends Controller
         $galleries = Gallery::all();
         $setting = Setting::first();
 
-        $str = $setting->youtube;
-        $arr = explode("=",$str);
+        // $str = $setting->youtube;
+        // $arr = explode("=",$str);
 
         // dd($setting->youtube);
 
         return Inertia::render('Tentang', [
             'abouts' => $abouts,
             'galleries' => $galleries,
-            'youtube' => $arr[1]
+            // 'youtube' => $arr[1]
         ]);
     }
     

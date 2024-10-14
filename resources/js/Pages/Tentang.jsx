@@ -63,7 +63,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                     </div>
 
 
-                    <section className="about-section">
+                    {/* <section className="about-section">
                         <img
                             src="/img/orang.png"
                             alt="Various Suhita products"
@@ -115,7 +115,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                         ))}
                     </section>
 
-                    <div className="video-section">
+                    {/* <div className="video-section">
                         <h1 className="video-title">VIDEO</h1>
                         <div className="video-container">
                         <iframe width="1280" height="720" src={`https://www.youtube.com/embed/${youtube}`} title="CARA BUDIDAYA LEBAH MADU DI SUHITA BEE FARM  - LAMPUNG" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -148,7 +148,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="gallery-section">
                         <h1 className="video-title">GALERI</h1>
@@ -162,7 +162,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                                 />
                             ))}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <Footer />
             </div>
