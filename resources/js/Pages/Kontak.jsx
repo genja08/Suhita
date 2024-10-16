@@ -13,7 +13,7 @@ export default function Kontak() {
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <div className="kontak">
-          <h1>Hubungi Kami</h1>
+          {/* <h1>.</h1> */}
           <h1>Hubungi Kami</h1>
           <p>
             Untuk pertanyaan umum, pengembalian pesanan, umpan balik & pertanyaan data
