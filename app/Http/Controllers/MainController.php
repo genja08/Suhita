@@ -22,10 +22,13 @@ class MainController extends Controller
         $galleries = Gallery::all();
         $setting = Setting::first();
 
+        $str = $setting->youtube;
+        $arr = explode("=",$str);
+
         return Inertia::render('Beranda', [
             'abouts' => $abouts,
             'galleries' => $galleries,
-            // 'youtube' => $arr[1]
+            'youtube' => $arr[1]
         ]);
     }
 
