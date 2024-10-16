@@ -150,7 +150,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                         </div>
                     </div> */}
 
-                    <div className="gallery-section">
+                    {/* <div className="gallery-section">
                         <h1 className="video-title">GALERI</h1>
                         <div className="gallery-grid">
                             {galleries.map((gallery, index) => (
