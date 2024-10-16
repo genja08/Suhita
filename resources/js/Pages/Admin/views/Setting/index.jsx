@@ -104,6 +104,7 @@ function IndexSetting({ settings }) {
                       <Col className="text-left" sm="12">
                         <CardTitle tag="h2">Setting</CardTitle>
                           {/* <a href="/admin/tambahsetting" className="btn btn-sm btn-info mt-3">Tambah Data</a> */}
+                          {/*  */}
                           <table className="table table-hover w-100 mt-3 text-white">
                             <thead>
                                 <th scope="col">#</th>
