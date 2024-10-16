@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'SedanSC';
+    src: url('/public/fonts/SedanSC-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/public/fonts/Roboto-Bold.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Medium';
+    src: url('/public/fonts/Roboto-Medium.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: medium;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Reguler';
+    src: url('/public/fonts/Roboto-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 /* Main Content */
 .min-h-screen.white {
     background-color: white; /* White background */

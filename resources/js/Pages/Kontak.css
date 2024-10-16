@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'SedanSC';
+  src: url('/public/fonts/SedanSC-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('/public/fonts/Roboto-Bold.ttf') format('truetype'); /* Ganti dengan path file font */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('/public/fonts/Roboto-Medium.ttf') format('truetype'); /* Ganti dengan path file font */
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Reguler';
+  src: url('/public/fonts/Roboto-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Ensure the whole page takes up the full height */
 .min-h-screen {
   display: flex;
@@ -6,14 +34,19 @@
 }
 
 .kontak {
+  flex: 1;
   text-align: center;
-  padding: 40px 20px; 
-  background-image: url('/img/Background.png'); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  flex: 1; /* Allow the kontak section to take up remaining space */
-  margin-left: -10px;
+  padding: 50px 20px; 
+  background-image: url('/img/Background.png');
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  margin-top: -30px;
+  margin-left: -3px;
+  min-height: 95vh; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
 }
 
 .kontak h1 {
@@ -23,11 +56,11 @@
 }
 
 .kontak p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   text-align: justify;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 700px;
   color: #fff;
 }
 
@@ -47,7 +80,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
+  gap: 40px;
   width: 100%;
   max-width: 600px;
 }
@@ -63,6 +96,7 @@
 .contact-item img {
   width: 24px;
   height: auto;
+  margin-right: 20px;
 }
 
 /* Footer at the bottom */

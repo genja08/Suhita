@@ -5,6 +5,13 @@ import Navbar from '@/Components/Navbar/Navbar';
 import Footer from '@/Components/Footer/Footer';
 
 export default function Kontak() {
+
+//   const getImageSrc = (image) => {
+//     return isDarkMode
+//         ? `/img/${image}-black.png`
+//         : `/img/${image}-white.png`;
+// };
+
   return (
     <>
       <Head title="Kontak">
@@ -12,8 +19,10 @@ export default function Kontak() {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Navbar />
+        {/* <img src={getImageSrc('super3')} alt="" /> */}
         <div className="kontak">
           {/* <h1>.</h1> */}
+          {/* <img src={getImageSrc('super3')} alt="" /> */}
           <h1>Hubungi Kami</h1>
           <p>
             Untuk pertanyaan umum, pengembalian pesanan, umpan balik & pertanyaan data
@@ -41,6 +50,7 @@ export default function Kontak() {
             </div>
           </div>
         </div>
+        {/* <img src={getImageSrc('super4')} alt="" /> */}
         <Footer />
       </div>
     </>

@@ -25,12 +25,12 @@ export default function Beranda({ abouts, galleries, youtube }) {
           <img src="/img/super4-black.png" alt="Gambar 2" className="quote-image" />
         </main>
 
-        <section className="about-section">
+        {/* <section className="about-section">
           <img src="/img/orang.png" alt="Various Suhita products" className="about-image" />
           <p className="about-text">
             Suhita melestarikan budaya Nusantara dengan madu murni sebagai pendamping aktivitas harian. Sejak 2016, kami berfokus bersama para beekeeper dan peneliti, menciptakan sistem produksi terintegrasi dari hutan primer Sumatera hingga pemasaran modern, memastikan kualitas produk yang terjamin.
           </p>
-        </section>
+        </section> */}
 
         <section className="about-section2">
           <img src="/img/allproduk.png" alt="Various Suhita products" className="about-image2" />

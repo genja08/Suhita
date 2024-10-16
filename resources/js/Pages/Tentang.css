@@ -1,3 +1,31 @@
+@font-face {
+    font-family: 'SedanSC';
+    src: url('/public/fonts/SedanSC-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/public/fonts/Roboto-Bold.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Medium';
+    src: url('/public/fonts/Roboto-Medium.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: medium;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Reguler';
+    src: url('/public/fonts/Roboto-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
+    font-weight: normal;
+    font-style: normal;
+  }
+
 /* Main Content */
 .min-h-screen.white {
     background-color: white; /* White background */
@@ -32,6 +60,18 @@
     max-width: 800px;
     margin: 0 auto;
 }
+
+.content p {
+    font-family: 'Roboto', sans-serif; /* Pastikan font family ditulis benar */
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%; /* Membuat paragraf mengambil 100% dari container */
+    max-width: 800px; /* Membatasi lebar maksimal paragraf */
+    text-align: left; /* Membuat teks rata kiri */
+    margin: 0 auto 20px; /* Pusatkan dengan margin otomatis dan beri jarak antar paragraf */
+    line-height: 1.6; /* Memberikan jarak antar baris agar lebih mudah dibaca */
+}
+
 
 /* Divider */
 .divider {
