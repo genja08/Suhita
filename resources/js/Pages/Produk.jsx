@@ -82,7 +82,10 @@ export default function Produk({products, reviews}) {
                         </section>
 
                         <section className="products-section">
+                            <div className='title'>
                             <h2 className="section-title">Produk Kami</h2>
+                            </div>
+                            
                             <div className="products-grid">
                                 {products.map((product) => (
                                     <div key={product.id} className="product-card">
@@ -109,7 +112,10 @@ export default function Produk({products, reviews}) {
                         </section>
 
                         <section className="reviews-section">
+                            <div className='title'>
                             <h2 className="section-title">Customer Reviews</h2>
+                            </div>
+                            
                             <div className="reviews">
                                 {reviews.map((review, index) => (
                                     <ReviewCard key={index} {...review} />

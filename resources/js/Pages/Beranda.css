@@ -180,15 +180,44 @@
   }
 }
 
-.section-title {
-  padding-top: 70px;
-  text-align: center;
-  font-size: 32px;
-  margin: 32px 0;
-  background: linear-gradient(to right, #ffeb3b, #ffc107); /* Gradien kuning */
-  padding: 20px; /* Menambahkan padding untuk tampilan yang lebih baik */
-  border-radius: 8px; /* Menambahkan sudut membulat jika diinginkan */
+/* Container for centering the content */
+.title-container {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  /* height: 100vh; Optional: Full viewport height for vertical centering */
+  text-align: center; /* Ensure content is centered inside the flexbox */
 }
+
+/* Section title styles */
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 32px 0;
+  background: linear-gradient(to bottom, #fcbf49, #ffffff); /* Yellow to white gradient */
+  padding: 20px;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: inline-block; /* Gradient only wraps around the text */
+}
+
+
+/* .section-title {
+  padding: 10px 20px;
+  text-align: center;
+  margin: center;
+  font-size: 32px; 
+  background: linear-gradient(to bottom, #fcbf49, #fcedc8); 
+  color: black;
+  display: inline-block; 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  font-weight: bold;
+} */
+
+
+
+
 
 /* Bee Types Section */
 .bee-types {
@@ -306,6 +335,9 @@
   padding: 32px;
   margin-bottom: 100px;
   margin-top: 100px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center;
 }
 
 /* Title Style */
@@ -313,6 +345,15 @@
   text-align: center;
   font-size: 32px;
   margin-bottom: 16px;
+  font-weight: bold;
+  /* margin: 32px 0; */
+  background: linear-gradient(to bottom, #fcbf49, #ffffff); /* Yellow to white gradient */
+  padding: 20px;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: inline-block; /* Gradient only wraps around the text */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .video-container {

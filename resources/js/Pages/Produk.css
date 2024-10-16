@@ -229,6 +229,12 @@ body {
     margin-left: 20px;
 }
 
+.title{
+    display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Ensure content is centered inside the flexbox */
+}
 .section-title {
     font-size: 35px;
     font-weight: bold;
@@ -241,7 +247,10 @@ body {
     padding-bottom: 7px;
     text-align: center;
     align-items: center;
-
+    background: linear-gradient(to bottom, #fcbf49, #ffffff); /* Yellow to white gradient */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: inline-block; /* Gradient only wraps around the text */
     color: #000;
     text-align: center;
 }

@@ -39,8 +39,10 @@ export default function Beranda({ abouts, galleries, youtube }) {
           </p>
         </section>
 
-        <h2 className="section-title">PURE FROM NATURE</h2>
-
+        <div class="title-container">
+          <h2 class="section-title">PURE FROM NATURE</h2>
+        </div>
+        
         <section className="bee-types">
           {abouts.map((item, index) => (
             <div key={index} className={`bee-type ${index % 2 === 1 ? 'reverse' : ''}`}>
