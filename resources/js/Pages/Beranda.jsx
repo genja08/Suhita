@@ -4,7 +4,7 @@ import './Beranda.css';
 import Navbar from '@/Components/Navbar/Navbar';
 import Footer from '@/Components/Footer/Footer';
 
-export default function Beranda({ abouts, galleries }) {
+export default function Beranda({ abouts, galleries, youtube }) {
   return (
     <>
       <Head title="Beranda">
