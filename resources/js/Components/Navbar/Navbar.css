@@ -1,16 +1,17 @@
 .navbar {
-    background-color: #100806;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between; /* Flex for spacing between logo and nav */
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-  }
+  background-color: rgba(16, 8, 6, 0.3); /* Mengatur transparansi dengan RGBA */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
   
   .navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.9);

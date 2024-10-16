@@ -41,7 +41,7 @@ export default function Beranda({ abouts, galleries }) {
 
         <h2 className="section-title">PURE FROM NATURE</h2>
 
-        {/* <section className="bee-types">
+        <section className="bee-types">
           {abouts.map((item, index) => (
             <div key={index} className={`bee-type ${index % 2 === 1 ? 'reverse' : ''}`}>
               {index % 2 === 0 && (
@@ -56,10 +56,10 @@ export default function Beranda({ abouts, galleries }) {
               )}
             </div>
           ))}
-        </section> */}
+        </section>
 
         {/* Uncomment video section if needed */}
-        {/* <div className="video-section">
+        <div className="video-section">
           <h1 className="video-title">VIDEO</h1>
           <div className="video-container">
             <iframe
@@ -93,16 +93,16 @@ export default function Beranda({ abouts, galleries }) {
               </p>
             </div>
           </div>
-        </div> */}
+        </div>
 
-        {/* <div className="gallery-section">
+        <div className="gallery-section">
           <h1 className="video-title">GALERI</h1>
           <div className="gallery-grid">
             {galleries.map((gallery, index) => (
               <img key={index} src={`https://suhita.id${gallery.gambar}`} alt={`Image ${index + 1}`} className="gallery-image" />
             ))}
           </div>
-        </div> */}
+        </div>
 
         <Footer />
       </div>

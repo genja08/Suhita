@@ -1,13 +1,17 @@
 .beranda {
   flex: 1;
   text-align: center;
-  padding: 50px 20px; /* Menambahkan padding vertikal */
+  padding: 50px 20px; 
   background-image: url('/img/Background.png');
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   background-repeat: no-repeat;
-  margin-top: 50px;
+  margin-top: -90px;
   margin-left: -3px;
+  min-height: 115vh; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
 }
 
 .quote {
@@ -94,6 +98,7 @@
   margin-bottom: 32px;
   margin-left: 100px;
   margin-right: 100px;
+  margin-top: 100px;
 }
 
 .about-section2 {
