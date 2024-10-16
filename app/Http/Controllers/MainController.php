@@ -18,7 +18,15 @@ class MainController extends Controller
 {
 
     public function beranda() {
-        return Inertia::render('Beranda');
+        $abouts = About::all();
+        $galleries = Gallery::all();
+        $setting = Setting::first();
+
+        return Inertia::render('Beranda', [
+            'abouts' => $abouts,
+            'galleries' => $galleries,
+            // 'youtube' => $arr[1]
+        ]);
     }
 
     public function tentang(){
