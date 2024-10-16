@@ -180,12 +180,14 @@
   }
 }
 
-/* Section Titles */
 .section-title {
   padding-top: 70px;
   text-align: center;
   font-size: 32px;
   margin: 32px 0;
+  background: linear-gradient(to right, #ffeb3b, #ffc107); /* Gradien kuning */
+  padding: 20px; /* Menambahkan padding untuk tampilan yang lebih baik */
+  border-radius: 8px; /* Menambahkan sudut membulat jika diinginkan */
 }
 
 /* Bee Types Section */
