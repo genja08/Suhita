@@ -5,6 +5,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -29,17 +30,44 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log('Search query:', searchQuery); // Logika pencarian
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <img src="/img/logo.png" alt="Suhita Logo" className="logo" />
-      <div className={`nav ${menuOpen ? 'open' : ''}`}>
-        <a href="/" className={activeLink === '/' ? 'active' : ''}>BERANDA</a>
-        <a href="/tentang" className={activeLink === '/tentang' ? 'active' : ''}>TENTANG KAMI</a>
-        <a href="/produk" className={activeLink === '/produk' ? 'active' : ''}>PRODUK</a>
-        <a href="/kontak" className={activeLink === '/kontak' ? 'active' : ''}>KONTAK</a>
-      </div>
-      <div className="hamburger" onClick={toggleMenu}>
-        &#9776; {/* Hamburger icon */}
+      <div className="navbar-container">
+        <div className="navbar-left">
+          <img src="/img/logo.png" alt="Suhita Logo" className="logo" />
+          <div className={`nav-elements ${menuOpen ? 'active' : ''}`}>
+            <ul className="nav-menu">
+              <li><a href="/" className={activeLink === '/' ? 'active' : ''}>BERANDA</a></li>
+              <li><a href="/tentang" className={activeLink === '/tentang' ? 'active' : ''}>TENTANG KAMI</a></li>
+              <li><a href="/produk" className={activeLink === '/produk' ? 'active' : ''}>PRODUK</a></li>
+              <li><a href="/kontak" className={activeLink === '/kontak' ? 'active' : ''}>KONTAK</a></li>
+            </ul>
+            <div className="search-bar">
+              <form onSubmit={handleSearchSubmit}>
+                <input
+                  type="text"
+                  placeholder="Cari..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
   );

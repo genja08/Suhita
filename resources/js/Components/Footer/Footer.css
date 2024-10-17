@@ -3,11 +3,101 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px;
+    padding: 40px 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     color: #fff;
+}
+
+.footer-left {
+    display: flex; /* Menjadi flex container */
+    /* justify-content: space-between; Menjaga jarak antar elemen */
+    align-items: center; /* Mengatur elemen di tengah secara vertikal */
+    gap: 70px; /* Jarak antar elemen */
+    flex: 1; /* Memungkinkan footer-left mengambil ruang yang tersedia */
+}
+
+.contact {
+    display: flex; /* Horizontal alignment */
+    align-items: center; /* Vertikal center */
+    gap: 100px; /* Jarak antara logo dan konten */
+}
+
+.contact img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.socialIcons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 3px;
+}
+
+.socialIcons img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.socialIcons img:hover {
+    transform: scale(1.1);
+}
+
+.socialtitle {
+    font-size: 22px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #ffcc00;
+}
+
+.footer-right {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.certImages img {
+    height: 50px;
+}
+
+.qrCode img {
+    height: 100px;
+    margin-top: 10px;
 }
 
 /* Struktur tampilan footer pada mobile */
@@ -16,13 +106,20 @@
         flex-direction: column;
         align-items: center;
     }
-  
-    .contact {
+
+    .footer-left, .footer-right {
+        width: 100%;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .contact {
         align-items: center;
         text-align: center;
     }
-  
+
     .contact img {
         height: 40px;
     }
@@ -42,6 +139,7 @@
 
     .links {
         text-align: center;
+        align-items: center;
         margin-top: 10px;
     }
 
@@ -51,7 +149,7 @@
     }
 
     .certImages {
-        grid-template-columns: repeat(1, 1fr); /* Tampilkan satu kolom pada mobile */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .certImages img {
@@ -61,74 +159,4 @@
     .qrCode img {
         height: 80px;
     }
-}
-
-.contact {
-    display: flex;
-    align-items: center;
-}
-  
-.contact img {
-    height: 50px;
-    margin-right: 10px;
-}
-  
-.socialIcons {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-}
-  
-.socialIcons a {
-    color: #fff;
-    font-size: 20px;
-    margin: 0 3px;
-}
-  
-.socialIcons img {
-    width: 30px;
-    height: auto;
-    transition: transform 0.3s;
-}
-
-.socialIcons img:hover {
-    transform: scale(1.1);
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-  
-.links a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.links a:hover {
-    color: #ffcc00;
-}
-  
-.certifications {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  
-.certImages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-  
-.certImages img {
-    height: 50px;
-}
-  
-.qrCode img {
-    height: 100px;
-    margin-top: 10px;
 }
