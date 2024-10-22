@@ -19,38 +19,66 @@ export default function Kontak() {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Navbar />
+<<<<<<< HEAD
         {/* <img src={getImageSrc('super3')} alt="" /> */}
         <div className="kontak">
           {/* <h1>.</h1> */}
           {/* <img src={getImageSrc('super3')} alt="" /> */}
+=======
+        
+        <div className="kontak items-center justify-center">
+          {/* Gambar 1 */}
+          <img
+            src="/img/super3-black.png"
+            alt="Gambar 1"
+            className="quote-image"
+            style={{ marginBottom: '40px' }} 
+          />
+
+          {/* Heading dan Deskripsi */}
+>>>>>>> 21947da (u)
           <h1>Hubungi Kami</h1>
           <p>
             Untuk pertanyaan umum, pengembalian pesanan, umpan balik & pertanyaan data
             pribadi, jangan ragu untuk menghubungi kami dengan menulis email atau
-            menelepon kami pada rincian yang diberikan di bawah.
+            menelepon kami pada rincian yang diberikan di bawah ini.
           </p>
+
+          {/* Info Kontak */}
           <div className="contact-info">
-            <div className="contact-item">
+            <div className="contact-item" style={{ marginLeft: '-400px' }}>
               <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product">
                 <img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" />
-                082279255702
+                <p style={{ marginLeft: '20px' }}>082279255702</p>
               </a>
             </div>
-            <div className="contact-item">
+            <div className="contact-item" style={{ marginLeft: '-400px' }}>
               <a href="#">
                 <img src="/img/instagram.png" className="imageicon2" alt="Instagram" />
-                madu_suhita
+                <p style={{ marginLeft: '20px' }}>madu_suhita</p>
               </a>
             </div>
-            <div className="contact-item">
+            <div className="contact-item" style={{ marginLeft: '-400px' }}>
               <a href="#">
-                <img src="/img/E-mail.png" className="imageicon3" alt="email" />
-                pt.suhitalebahindonesia@gmail.com
+                <img src="/img/E-mail.png" className="imageicon3" alt="Email" />
+                <p style={{ marginLeft: '20px' }}>pt.suhitalebahindonesia@gmail.com</p>
               </a>
             </div>
           </div>
+
+          {/* Gambar 2 */}
+          <img
+            src="/img/super4-black.png"
+            alt="Gambar 2"
+            className="quote-image"
+            style={{ marginTop: '40px' }} 
+          />
         </div>
+<<<<<<< HEAD
         {/* <img src={getImageSrc('super4')} alt="" /> */}
+=======
+
+>>>>>>> 21947da (u)
         <Footer />
       </div>
     </>

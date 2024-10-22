@@ -55,6 +55,7 @@ export default function Tentang({ abouts, galleries, youtube }) {
                         <p>
                             Madu Suhita berusaha dan konsisten menjaga kemurnian madu yang berasal dari nektar alami, menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu berasal dari sumber yang bertanggung jawab terhadap lingkungan.
                         </p>
+                        <div className="divider" />
                         <p>
                             Bersama Madu Suhita, Anda dapat menikmati manfaat alami dari madu murni sekaligus mendukung kelestarian alam.
                         </p>

@@ -107,9 +107,13 @@
         align-items: center;
     }
 
+<<<<<<< HEAD
     .footer-left, .footer-right {
         width: 100%;
         display: flex;
+=======
+    .contact {
+>>>>>>> 21947da (u)
         flex-direction: column;
         align-items: center;
         gap: 30px;
@@ -159,4 +163,96 @@
     .qrCode img {
         height: 80px;
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+.contact {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center; /* Memastikan konten dalam contact terpusat */
+    text-align: center;
+}
+  
+.contact img {
+    height: 75px;
+    margin-bottom: 0px; /* Hilangkan jarak ekstra antara logo dan "Ikuti Kami" */
+}
+
+.ikutikami {
+    margin-top: 20px; 
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* Warna teks putih */
+    text-align: center;
+    font-size: 17pt;
+}
+
+.div2{
+    margin-left: 100px;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center; /* Ikon sosial terpusat */
+    gap: 10px;
+    margin-top: 10px; /* Jarak antara "Ikuti Kami" dan ikon */
+}
+  
+.socialIcons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 5px;
+}
+  
+.socialIcons img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.socialIcons img:hover {
+    transform: scale(1.1);
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #ffcc00;
+}
+  
+.certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+  
+.certImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+  
+.certImages img {
+    height: 50px;
+}
+  
+.qrCode img {
+    height: 100px;
+    margin-top: 10px;
+}
+>>>>>>> 21947da (u)

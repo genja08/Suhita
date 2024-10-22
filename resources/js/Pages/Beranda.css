@@ -34,7 +34,11 @@
   background-size: cover;
   /* background-position: center; */
   background-repeat: no-repeat;
+<<<<<<< HEAD
   margin-top: -50px;
+=======
+  margin-top: -80px;
+>>>>>>> 21947da (u)
   margin-left: -3px;
   min-height: 115vh; 
   display: flex; 
@@ -46,12 +50,31 @@
   background-image: url('/img/bgberanda.png');
   background-size: cover;
   background-position: center;
+<<<<<<< HEAD
   border: 4px solid #B17E29;
   border-radius: 10px;
   padding: 40px;
+=======
+  border: 10px solid #B17E29;
+  border-radius: 10px;
+  padding: 80px;
+>>>>>>> 21947da (u)
   display: inline-block;
   max-width: 1100px;
   animation: fadeIn 0.5s ease-in-out; /* Tambahkan animasi */
+  font-family: 'Sedan SC';font-size: 22px;
+}
+
+.quote a {
+  background-color: #B17E29;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 13px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
 }
 
 .quote-image {
@@ -84,6 +107,7 @@
   color: #B17E29; /* Mengubah warna teks saat hover */
 }
 
+<<<<<<< HEAD
 .quote a {
   background-color: #B17E29;
   border: none;
@@ -97,6 +121,12 @@
 
 .quote a:hover {
   background-color: #B17E29; /* Mengubah warna background saat hover */
+=======
+
+
+.quote a:hover {
+  background-color: #8f6721; /* Mengubah warna background saat hover */
+>>>>>>> 21947da (u)
 }
 
 /* Responsif */
@@ -215,17 +245,17 @@
   }
 }
 
-/* Container for centering the content */
 .title-container {
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  /* height: 100vh; Optional: Full viewport height for vertical centering */
-  text-align: center; /* Ensure content is centered inside the flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  text-align: center;
 }
 
 /* Section title styles */
 .section-title {
+<<<<<<< HEAD
   font-family: 'Roboto-Bold', sans-serif;
   font-size: 32px;
   font-weight: bold;
@@ -235,6 +265,17 @@
   border-radius: 5px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   display: inline-block; /* Gradient only wraps around the text */
+=======
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 35px 0;
+  background: linear-gradient(to bottom, #fcbf49, #ffffff);
+  padding: 20px 50px 20px 50px;
+  border-radius: 15px; /* Rounded corners */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+  /* display: inline-block; */
+  margin-bottom: 100px;
+>>>>>>> 21947da (u)
 }
 
 
@@ -291,13 +332,17 @@
 
 /* Title and Description */
 .bee-title {
-  font-size: 24px;
+  font-size: 28px;
   margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 }
 
 .bee-description {
   font-size: 20px;
   text-align: justify;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 /* Dark mode for bee text */
@@ -380,17 +425,18 @@
 .video-title {
   font-family: 'Roboto-Bold', sans-serif;
   text-align: center;
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 16px;
   font-weight: bold;
   /* margin: 32px 0; */
   background: linear-gradient(to bottom, #fcbf49, #ffffff); /* Yellow to white gradient */
-  padding: 20px;
+  padding: 20px 50px 20px 50px;
   border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   display: inline-block; /* Gradient only wraps around the text */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
+  margin-bottom: 100px;
 }
 
 .video-container {
@@ -450,6 +496,13 @@
   font-size: 18px;
   font-weight: normal;
   margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.video-text p {
+  font-size: 20px;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Dark mode for video text */

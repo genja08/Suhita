@@ -4,11 +4,13 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className='footer'>
-      <div className='footer-left'>
-        <div className='contact'>
-          <img src="/img/logosuhita3.png" alt="Suhita Logo" />
-          <div>
-            <div className='socialtitle'>Ikuti Kami</div>
+      <div className='contact'>
+        <img 
+          src="/img/logosuhita3.png" 
+          alt="Suhita Logo" 
+        />
+        <div>
+          <div>Ikuti Kami</div>
             <div className='socialIcons'>
               <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product">
                 <img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" />
