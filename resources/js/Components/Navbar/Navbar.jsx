@@ -51,7 +51,7 @@ const Navbar = () => {
               <li><a href="/produk" className={activeLink === '/produk' ? 'active' : ''}>PRODUK</a></li>
               <li><a href="/kontak" className={activeLink === '/kontak' ? 'active' : ''}>KONTAK</a></li>
             </ul>
-            <div className="search-bar">
+            {/* <div className="search-bar">
               <form onSubmit={handleSearchSubmit}>
                 <input
                   type="text"
@@ -60,7 +60,7 @@ const Navbar = () => {
                   onChange={handleSearchChange}
                 />
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="hamburger" onClick={toggleMenu}>

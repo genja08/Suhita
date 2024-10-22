@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-@font-face {
-  font-family: 'SedanSC';
-  src: url('/public/fonts/SedanSC-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto-Bold';
-  src: url('/public/fonts/Roboto-Bold.ttf') format('truetype'); /* Ganti dengan path file font */
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto-Medium';
-  src: url('/public/fonts/Roboto-Medium.ttf') format('truetype'); /* Ganti dengan path file font */
-  font-weight: medium;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto-Reguler';
-  src: url('/public/fonts/Roboto-Regular.ttf') format('truetype'); /* Ganti dengan path file font */
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Ensure the whole page takes up the full height */
-=======
->>>>>>> 21947da (u)
 .min-h-screen {
   display: flex;
   flex-direction: column;
@@ -42,16 +10,6 @@
   padding: 50px 20px; 
   background-image: url('/img/Background.png');
   background-size: cover;
-<<<<<<< HEAD
-  /* background-position: center; */
-  background-repeat: no-repeat;
-  margin-top: -50px;
-  margin-left: -3px;
-  min-height: 95vh; 
-  display: flex; 
-  flex-direction: column;
-  justify-content: center; 
-=======
   background-repeat: no-repeat;
   margin-top: -80px;
   margin-left: -3px;
@@ -72,7 +30,6 @@
 
 .quote-image:hover {
   transform: scale(1.05); 
->>>>>>> 21947da (u)
 }
 
 .kontak h1 {
@@ -82,19 +39,11 @@
 }
 
 .kontak p {
-<<<<<<< HEAD
-  font-size: 20px;
-  line-height: 1.6;
-  text-align: justify;
-  margin: 0 auto;
-  max-width: 700px;
-=======
   font-size: 23px;
   line-height: 1.6;
   text-align: justify;
   margin: 0 auto;
   max-width: 800px;
->>>>>>> 21947da (u)
   color: #fff;
 }
 

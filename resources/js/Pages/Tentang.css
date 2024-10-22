@@ -62,12 +62,12 @@
 }
 
 .content p {
-    font-family: 'Roboto', sans-serif; /* Pastikan font family ditulis benar */
+    /* font-family: 'Roboto', sans-serif; Pastikan font family ditulis benar */
     font-size: 18px;
     font-weight: normal;
     width: 100%; /* Membuat paragraf mengambil 100% dari container */
     max-width: 800px; /* Membatasi lebar maksimal paragraf */
-    text-align: left; /* Membuat teks rata kiri */
+    text-align: justify; /* Membuat teks rata kiri */
     margin: 0 auto 20px; /* Pusatkan dengan margin otomatis dan beri jarak antar paragraf */
     line-height: 1.6; /* Memberikan jarak antar baris agar lebih mudah dibaca */
 }

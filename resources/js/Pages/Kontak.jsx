@@ -19,24 +19,13 @@ export default function Kontak() {
       </Head>
       <div className="min-h-screen flex flex-col">
         <Navbar />
-<<<<<<< HEAD
-        {/* <img src={getImageSrc('super3')} alt="" /> */}
         <div className="kontak">
-          {/* <h1>.</h1> */}
-          {/* <img src={getImageSrc('super3')} alt="" /> */}
-=======
-        
-        <div className="kontak items-center justify-center">
-          {/* Gambar 1 */}
           <img
-            src="/img/super3-black.png"
-            alt="Gambar 1"
-            className="quote-image"
-            style={{ marginBottom: '40px' }} 
-          />
-
-          {/* Heading dan Deskripsi */}
->>>>>>> 21947da (u)
+              src="/img/super3-black.png"
+              alt="Gambar 1"
+              className="quote-image"
+              style={{ marginBottom: '40px' }} 
+            />
           <h1>Hubungi Kami</h1>
           <p>
             Untuk pertanyaan umum, pengembalian pesanan, umpan balik & pertanyaan data
@@ -46,19 +35,19 @@ export default function Kontak() {
 
           {/* Info Kontak */}
           <div className="contact-info">
-            <div className="contact-item" style={{ marginLeft: '-400px' }}>
+            <div className="contact-item">
               <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product">
                 <img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" />
                 <p style={{ marginLeft: '20px' }}>082279255702</p>
               </a>
             </div>
-            <div className="contact-item" style={{ marginLeft: '-400px' }}>
+            <div className="contact-item">
               <a href="#">
                 <img src="/img/instagram.png" className="imageicon2" alt="Instagram" />
                 <p style={{ marginLeft: '20px' }}>madu_suhita</p>
               </a>
             </div>
-            <div className="contact-item" style={{ marginLeft: '-400px' }}>
+            <div className="contact-item">
               <a href="#">
                 <img src="/img/E-mail.png" className="imageicon3" alt="Email" />
                 <p style={{ marginLeft: '20px' }}>pt.suhitalebahindonesia@gmail.com</p>
@@ -74,11 +63,7 @@ export default function Kontak() {
             style={{ marginTop: '40px' }} 
           />
         </div>
-<<<<<<< HEAD
         {/* <img src={getImageSrc('super4')} alt="" /> */}
-=======
-
->>>>>>> 21947da (u)
         <Footer />
       </div>
     </>

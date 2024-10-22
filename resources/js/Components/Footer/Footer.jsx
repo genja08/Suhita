@@ -1,16 +1,13 @@
 import React from 'react';
 import './Footer.css';
-
 const Footer = () => {
   return (
     <footer className='footer'>
-      <div className='contact'>
-        <img 
-          src="/img/logosuhita3.png" 
-          alt="Suhita Logo" 
-        />
-        <div>
-          <div>Ikuti Kami</div>
+      <div className='footer-left'>
+        <div className='contact'>
+          <img src="/img/logosuhita3.png" alt="Suhita Logo" />
+          <div>
+            <div className='socialtitle'>Ikuti Kami</div>
             <div className='socialIcons'>
               <a href="https://wa.me/6282279255702?text=I%20am%20interested%20in%20your%20product">
                 <img src="/img/whatsapp.png" className="imageicon1" alt="WhatsApp" />
@@ -20,7 +17,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
         <div className='links'> {/* Pindahkan links ke sini */}
           <a href="/">Beranda</a>
           <a href="/tentang">Tentang Kami</a>
@@ -39,7 +35,6 @@ const Footer = () => {
             <img src="/img/serti4.png" alt="Certification 4" />
           </div>
         </div>
-
         <div className='qrCode'>
           <img src="/img/qrcode.png" alt="QR Code" />
         </div>
@@ -47,5 +42,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

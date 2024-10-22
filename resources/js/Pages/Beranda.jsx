@@ -47,14 +47,14 @@ export default function Beranda({ abouts, galleries, youtube }) {
           {abouts.map((item, index) => (
             <div key={index} className={`bee-type ${index % 2 === 1 ? 'reverse' : ''}`}>
               {index % 2 === 0 && (
-                <img src={`https://suhita.id${item.gambar}`} alt={item.judul} className="bee-image" />
+                <img src={`http://127.0.0.1:8000${item.gambar}`} alt={item.judul} className="bee-image" />
               )}
               <div>
                 <h3 className="bee-title">{item.judul}</h3>
                 <p className="bee-description">{item.deskripsi}</p>
               </div>
               {index % 2 === 1 && (
-                <img src={`https://suhita.id${item.gambar}`} alt={item.judul} className="bee-image" />
+                <img src={`http://127.0.0.1:8000${item.gambar}`} alt={item.judul} className="bee-image" />
               )}
             </div>
           ))}
@@ -101,7 +101,7 @@ export default function Beranda({ abouts, galleries, youtube }) {
           <h1 className="video-title">GALERI</h1>
           <div className="gallery-grid">
             {galleries.map((gallery, index) => (
-              <img key={index} src={`https://suhita.id${gallery.gambar}`} alt={`Image ${index + 1}`} className="gallery-image" />
+              <img key={index} src={`http://127.0.0.1:8000${gallery.gambar}`} alt={`Image ${index + 1}`} className="gallery-image" />
             ))}
           </div>
         </div>

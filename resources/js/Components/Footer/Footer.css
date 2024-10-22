@@ -107,13 +107,10 @@
         align-items: center;
     }
 
-<<<<<<< HEAD
     .footer-left, .footer-right {
         width: 100%;
         display: flex;
-=======
     .contact {
->>>>>>> 21947da (u)
         flex-direction: column;
         align-items: center;
         gap: 30px;
@@ -163,9 +160,7 @@
     .qrCode img {
         height: 80px;
     }
-<<<<<<< HEAD
 }
-=======
 }
 
 .contact {
@@ -255,4 +250,3 @@
     height: 100px;
     margin-top: 10px;
 }
->>>>>>> 21947da (u)
