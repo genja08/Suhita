@@ -12,7 +12,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 const ReviewCard = ({ gambar_produk, kualitas, rasa, ulasan, rating }) => (
     <div className="review-card">
         <div className="review-image-container">
-            <img src={`http://127.0.0.1:8000${gambar_produk}`} alt="Product image" className="review-image" />
+            <img src={`https://suhita.id${gambar_produk}`} alt="Product image" className="review-image" />
         </div>
         <div className="review-details">
             <p className="review-quality"><strong>Kualitas:</strong> {kualitas}</p>
@@ -84,7 +84,7 @@ export default function Produk({ products, reviews }) {
                                 Madu suhita berusaha dan tetap konsisten membangun dan mempertahankan kemurnian madu yang berasal dari nektar alami, Menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu yang kalian nikmati berasal dari sumber yang bertanggung jawab terhadap lingkungan.
                             </p>
                         </section>
-                        
+
                         <section className="products-section">
                             <div className="title">
                                 <h2 className="section-title">Produk Kami</h2>
@@ -98,7 +98,7 @@ export default function Produk({ products, reviews }) {
                                 <div className="products-grid">
                                     {currentProducts.map((product) => (
                                         <div key={product.id} className="product-card">
-                                            <img src={`http://127.0.0.1:8000${product.gambar_produk}`} alt={product.nama_produk} className="product-image" />
+                                            <img src={`https://suhita.id${product.gambar_produk}`} alt={product.nama_produk} className="product-image" />
                                             <div className="product-info">
                                                 <div className="product-details">
                                                     <p className="product-name">{product.nama_produk}</p>
