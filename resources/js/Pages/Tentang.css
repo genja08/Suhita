@@ -51,13 +51,13 @@
 
 /* Content */
 .content {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; /* Center align images and text */
     text-align: justify;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -66,7 +66,7 @@
     font-size: 18px;
     font-weight: normal;
     width: 100%; /* Membuat paragraf mengambil 100% dari container */
-    max-width: 800px; /* Membatasi lebar maksimal paragraf */
+    max-width: 1000px; /* Membatasi lebar maksimal paragraf */
     text-align: justify; /* Membuat teks rata kiri */
     margin: 0 auto 20px; /* Pusatkan dengan margin otomatis dan beri jarak antar paragraf */
     line-height: 1.6; /* Memberikan jarak antar baris agar lebih mudah dibaca */

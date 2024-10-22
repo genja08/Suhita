@@ -51,15 +51,14 @@ export default function Tentang({ abouts, galleries, youtube }) {
                         <p>
                             Di tengah gempuran industrialisasi makanan dan minuman, banyak produsen yang kurang bertanggung jawab dengan produk mereka. Hampir semua kemasan mengandung pemanis sintetik yang membahayakan kesehatan manusia, seperti gula sintetik yang menjadi penyebab utama penyakit degeneratif, diabetes, obesitas, ginjal, dan jantung.
                         </p>
-                        <div className="divider" />
+                        {/* <div className="divider" /> */}
                         <p>
                             Madu Suhita berusaha dan konsisten menjaga kemurnian madu yang berasal dari nektar alami, menerapkan praktik pertanian berkelanjutan untuk memastikan setiap tetes madu berasal dari sumber yang bertanggung jawab terhadap lingkungan.
                         </p>
-                        <div className="divider" />
+                        {/* <div className="divider" /> */}
                         <p>
                             Bersama Madu Suhita, Anda dapat menikmati manfaat alami dari madu murni sekaligus mendukung kelestarian alam.
                         </p>
-                        <div className="divider" />
                         <img src={getImageSrc('super4')} alt="" />
                     </div>
 

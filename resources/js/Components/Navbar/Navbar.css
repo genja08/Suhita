@@ -21,6 +21,7 @@
   padding: 0 20px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative; /* Needed for centering */
 }
 
 .navbar-left {
@@ -33,7 +34,7 @@
 }
 
 .logo {
-  height: 40px;
+  height: 50px;
   margin-right: 20px;
   transition: transform 0.3s ease;
 }
@@ -45,6 +46,10 @@
 .nav-elements {
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: absolute; /* This allows it to center */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the menu horizontally */
 }
 
 .nav-menu {
@@ -70,9 +75,9 @@
   color: #ffcc00;
 }
 
-.search-bar {
+/* .search-bar {
   margin-left: 500px;
-}
+} */
 
 .search-bar input {
   padding: 8px 12px;
